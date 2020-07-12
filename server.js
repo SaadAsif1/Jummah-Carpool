@@ -1,6 +1,6 @@
 const path = require('path');
 const express = require('express');
-const cors = require('cors');
+// const cors = require('cors');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
 const dbConnect = require('./config/dbConnect');
@@ -18,7 +18,7 @@ dbConnect();
 // Devlopment Dependinces
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev')); // Logs incoming requests
-  app.use(cors()); // allow all orgins to access our servers
+  // app.use(cors()); // allow all orgins to access our servers
 }
 
 // Middleare
