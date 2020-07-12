@@ -1,8 +1,6 @@
 const path = require('path');
 const express = require('express');
 const dotenv = require('dotenv');
-const cors = require('cors');
-const morgan = require('morgan');
 const dbConnect = require('./config/dbConnect');
 const app = express();
 
@@ -17,6 +15,9 @@ dbConnect();
 
 // Devlopment Dependinces
 if (process.env.NODE_ENV === 'development') {
+  const cors = require('cors');
+  const morgan = require('morgan');
+
   app.use(morgan('dev')); // Logs incoming requests
   app.use(cors()); // allow all orgins to access our servers
 }
