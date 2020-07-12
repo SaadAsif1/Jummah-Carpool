@@ -1,0 +1,27 @@
+{
+  "name": "jumma-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "client": "cd client && yarn start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.19",
+    "mongoose": "^5.9.23",
+    "nodemailer": "^6.4.10"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "cors": "^2.8.5",
+    "morgan": "^1.10.0"
+  }
+}

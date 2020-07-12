@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+body {
+  background-color: #22313f;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Global Styles */
+.l-spacing {
+  letter-spacing: 1px;
+}
+
+.align-center {
+  text-align: center;
+}
+
+/* Home Contianer */
+.home-container {
+  width: 1000px;
+  padding: 1rem 0;
+  margin: 0 auto;
+}
+
+/* Main Button */
+.btn {
+  background-color: #03a87c;
+  border: none;
+  color: white;
+  border-radius: 3px;
+  padding: 0.33rem 1rem;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background-color: #25cfa2;
+  cursor: pointer;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 207, 162, 0.4);
+}
+
+.btn-inverted {
+  border: solid 2px #03a87c;
+  background-color: transparent;
+  border-radius: 3px;
+  padding: 0.33rem 1rem;
+  transition: 0.2s;
+  outline: none;
+  color: white;
+}
+
+.btn-inverted:hover {
+  background-color: #314252;
+  cursor: pointer;
+}
+
+/* Flex */
+.flex-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* underline transion */
+.middle {
+  position: relative;
+}
+
+.middle:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.2s ease-in-out;
+}
+
+.middle:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.middle-visable:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.2s ease-in-out;
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.middle:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+}

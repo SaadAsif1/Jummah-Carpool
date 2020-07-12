@@ -1,0 +1,25 @@
+/* Home Nav */
+.home-nav {
+  margin-top: 0.7rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.home-log {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.home-log:hover {
+  color: white;
+}
+
+.home-nav-link {
+  color: white;
+  margin-left: 3rem;
+}
+
+.home-nav-link:hover {
+  color: #fff;
+}

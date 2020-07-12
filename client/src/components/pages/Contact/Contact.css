@@ -1,0 +1,50 @@
+.contact-container {
+  background-color: #314252;
+  margin: 0 auto;
+  margin-top: 5rem;
+  width: 30rem;
+  padding: 1.5rem;
+  border-radius: 5px;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  font-family: 'Poppins', sans-serif;
+}
+
+.input-label {
+  display: block;
+  color: lightgrey;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.input-container {
+  margin-bottom: 2rem;
+}
+
+.input-container input,
+.input-container textarea {
+  width: 100%;
+  border: solid 1px lightgrey;
+  border-radius: 6px;
+  padding: 0.5rem;
+  background-color: #314252;
+  outline: none;
+  color: lightgrey;
+}
+
+.input-container textarea {
+  resize: none;
+  height: 10rem;
+}
+
+.contact-title-container {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-title {
+  color: white;
+  font-size: 2rem;
+  font-family: 'Poppins', sans-serif;
+  display: inline;
+  border-bottom: solid 3px #03a87c;
+}
