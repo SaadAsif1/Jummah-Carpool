@@ -13,6 +13,16 @@ import Activate from './components/auth/Activate';
 import ResetPassword from './components/auth/ResetPassword';
 import RegisterMasjid from './components/auth/RegisterMasjid';
 
+// Private Routes
+import MasjidRoute from './MasjidRoute';
+import UserRoute from './UserRoute';
+
+// User Routes
+import UserHome from './components/pages/User-Home/User';
+
+// Masjid Routes
+import MasjidHome from './components/pages/Masjid-Home/Masjid';
+
 const Routes = () => {
   return (
     <BrowserRouter>
@@ -27,6 +37,9 @@ const Routes = () => {
         <Route exact path='/forgot-password' component={ForgotPassword} />
         <Route exact path='/auth/password/reset/:token' component={ResetPassword} />
         <Route exact path='/auth/activate/:token' component={Activate} />
+
+        <MasjidRoute exact path='/masjid-home' component={MasjidHome} />
+        <UserRoute exact path='/user-home' component={UserHome} />
       </Switch>
     </BrowserRouter>
   );

@@ -39,8 +39,8 @@ const SignIn = ({ location, history }) => {
           form.resetFields();
           setButtonText('Submit');
           isAuth() && isAuth().role === 'masjid'
-            ? history.push('/admin/home/masjid')
-            : history.push('/admin/home');
+            ? history.push('/masjid-home')
+            : history.push('/user-home');
         });
       })
       .catch((error) => {
