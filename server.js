@@ -1,10 +1,12 @@
 const path = require('path');
 const express = require('express');
-// const cors = require('cors');
-// const morgan = require('morgan');
 const dotenv = require('dotenv');
 const dbConnect = require('./config/dbConnect');
+const sslRedirect = require('heroku-ssl-redirect');
 const app = express();
+
+// enable ssl redirect
+app.use(sslRedirect());
 
 // Imports Routes
 const authRoute = require('./routes/auth');
@@ -14,12 +16,6 @@ dotenv.config({ path: './config/config.env' });
 
 // Conntect to Database
 dbConnect();
-
-// Devlopment Dependinces
-if (process.env.NODE_ENV === 'development') {
-  // app.use(morgan('dev')); // Logs incoming requests
-  // app.use(cors()); // allow all orgins to access our servers
-}
 
 // Middleare
 app.use(express.json());
@@ -44,3 +40,11 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`App listening on port is ${PORT}`);
 });
+
+// Devlopment Dependinces
+// if (process.env.NODE_ENV === 'development') {
+//   // const cors = require('cors');
+//   // const morgan = require('morgan');
+//   // app.use(morgan('dev')); // Logs incoming requests
+//   // app.use(cors()); // allow all orgins to access our servers
+// }
