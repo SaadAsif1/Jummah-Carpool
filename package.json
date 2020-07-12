@@ -1,11 +1,11 @@
 {
-  "name": "jumma-app",
+  "name": "jummah-app",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "client": "cd client && yarn start",
-    "server": "node server.js",
+    "client": "cd client && npm start",
+    "server": "nodemon server.js",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
