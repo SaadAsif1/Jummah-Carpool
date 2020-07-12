@@ -21,8 +21,8 @@
     "nodemailer": "^6.4.10"
   },
   "devDependencies": {
-    "concurrently": "^5.2.0",
     "cors": "^2.8.5",
+    "concurrently": "^5.2.0",
     "morgan": "^1.10.0"
   }
 }
