@@ -24,6 +24,9 @@ if (process.env.NODE_ENV === 'development') {
 // Middleare
 app.use(express.json());
 
+// Routes middlewares
+app.use('/api', authRoute);
+
 // Serve our static assets if in productions
 if (process.env.NODE_ENV === 'production') {
   // Set static folder
@@ -33,9 +36,6 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
-
-// Routes middlewares
-app.use('/api', authRoute);
 
 // Port Number
 const PORT = process.env.PORT || 5000;
