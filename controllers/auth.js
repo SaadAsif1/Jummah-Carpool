@@ -47,7 +47,7 @@ exports.signup = async (req, res) => {
   });
 
   const mailOptions = {
-    from: `Jumma <${process.env.EMAIL_FROM}>`,
+    from: `Jummah <${process.env.EMAIL_FROM}>`,
     to: email,
     subject: 'Account Activation Link',
     html: `
@@ -202,7 +202,7 @@ exports.forgotPassword = async (req, res) => {
   });
 
   const mailOptions = {
-    from: `Jumma <${process.env.EMAIL_FROM}>`,
+    from: `Jummah <${process.env.EMAIL_FROM}>`,
     to: user.email,
     subject: 'Password Reset Link',
     html: `
