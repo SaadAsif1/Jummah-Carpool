@@ -34,7 +34,7 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-// Routes middleware
+// Routes middlewares
 app.use('/api', authRoute);
 
 // Port Number
