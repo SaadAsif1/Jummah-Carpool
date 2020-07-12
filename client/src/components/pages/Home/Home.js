@@ -12,7 +12,7 @@ const Home = () => {
 
         <div className='home-landing-container'>
           <div className='home-landing-left animated slideInLeft'>
-            <h1 className='home-main-text'>Jumma Connections</h1>
+            <h1 className='home-main-text'>Jummah Connections</h1>
             <div className='home-sub-text'>
               Jummah carpooling website. Map feature to see what mosque is near. Connect
               with others etc
