@@ -2,6 +2,7 @@ const nodemailer = require('nodemailer');
 const jwt = require('jsonwebtoken');
 const _ = require('lodash');
 const User = require('../models/User');
+const MasjidProfile = require('../models/MasjidProfile');
 const {
   signupValidation,
   singinValidation,
@@ -111,6 +112,13 @@ exports.activation = async (req, res) => {
             password,
             role: 'masjid',
           });
+
+          // create Random username
+          const newMasjidProfile = new MasjidProfile({
+            masjid: user,
+          });
+
+          await newMasjidProfile.save();
         } else {
           // Create new User
           user = new User({

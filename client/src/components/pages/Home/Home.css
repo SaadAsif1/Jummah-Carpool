@@ -47,6 +47,31 @@
   width: 27rem;
 }
 
+@media (max-width: 1070px) {
+  /* Landing Home */
+  .home-landing-container {
+    display: block;
+    text-align: center;
+  }
+
+  /* Landing Home (Left) */
+  .home-landing-left {
+    width: 100%;
+    color: white;
+    margin-top: 6rem;
+  }
+
+  .home-sub-text {
+    width: 40%;
+    margin: 0 auto;
+  }
+
+  /* Landing Home (Button) */
+  .home-btn-container {
+    margin-bottom: 5rem;
+  }
+}
+
 @media (max-height: 570px) {
   .home-background {
     background-image: none;

@@ -39,7 +39,7 @@ const SignIn = ({ location, history }) => {
           form.resetFields();
           setButtonText('Submit');
           isAuth() && isAuth().role === 'masjid'
-            ? history.push('/masjid-home')
+            ? history.push('/masjid-info-form')
             : history.push('/user-home');
         });
       })

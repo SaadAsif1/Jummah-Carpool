@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Form, Input, notification } from 'antd';
+import { Form, Input, notification, Checkbox } from 'antd';
 import axios from 'axios';
 import HomeNavbar from '../layouts/Home-Navbar/Navbar';
 import './Auth.css';
 
 const SignUp = () => {
   const [buttonText, setButtonText] = useState('Submit');
+  const [terms, setTerms] = useState(false);
 
   const [form] = Form.useForm();
 
@@ -14,6 +15,12 @@ const SignUp = () => {
     if (JSON.parse(values.age) < 18) {
       return notification.error({
         message: 'Must be 18 or older to sign up!',
+      });
+    }
+
+    if (!terms) {
+      return notification.error({
+        message: 'Must Agree With Terms And Conditions',
       });
     }
 
@@ -39,6 +46,11 @@ const SignUp = () => {
         setButtonText('Submit');
       });
   };
+
+  // Check box
+  function onChange(e) {
+    setTerms(e.target.checked);
+  }
 
   // Signup Form
   const signUpForm = () => (
@@ -100,6 +112,12 @@ const SignUp = () => {
           ]}
         >
           <Input.Password placeholder='Confirm Your Password' />
+        </Form.Item>
+
+        <Form.Item name='terms'>
+          <Checkbox onChange={onChange}>
+            I Agree With <Link to='/terms-conditions'>Terms & Conditions</Link>
+          </Checkbox>
         </Form.Item>
 
         <Form.Item>

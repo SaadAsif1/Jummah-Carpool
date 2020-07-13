@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Form, Input, notification } from 'antd';
+import { Form, Input, notification, Checkbox } from 'antd';
 import axios from 'axios';
 import HomeNavbar from '../layouts/Home-Navbar/Navbar';
 import './Auth.css';
 
 const RegisterMasjid = () => {
   const [buttonText, setButtonText] = useState('Submit');
+  const [terms, setTerms] = useState(false);
 
   const [form] = Form.useForm();
 
@@ -14,6 +15,12 @@ const RegisterMasjid = () => {
     if (JSON.parse(values.age) < 18) {
       return notification.error({
         message: 'Must be 18 or older to sign up!',
+      });
+    }
+
+    if (!terms) {
+      return notification.error({
+        message: 'Must Agree With Terms And Conditions',
       });
     }
 
@@ -40,6 +47,11 @@ const RegisterMasjid = () => {
       });
   };
 
+  // Check box
+  function onChange(e) {
+    setTerms(e.target.checked);
+  }
+
   // Signup Form
   const masjidForm = () => (
     <div>
@@ -60,10 +72,10 @@ const RegisterMasjid = () => {
         </Form.Item>
         <Form.Item
           name='age'
-          label='Age'
+          label='Year Founded'
           rules={[{ required: true, message: 'Please input your age!' }]}
         >
-          <Input placeholder='Your Age' type='number' />
+          <Input placeholder='Founded' type='number' />
         </Form.Item>
         <Form.Item
           name='password'
@@ -100,6 +112,12 @@ const RegisterMasjid = () => {
           ]}
         >
           <Input.Password placeholder='Confirm Your Password' />
+        </Form.Item>
+
+        <Form.Item name='terms'>
+          <Checkbox onChange={onChange}>
+            I Agree With <Link to='/terms-conditions'>Terms & Conditions</Link>
+          </Checkbox>
         </Form.Item>
 
         <Form.Item>

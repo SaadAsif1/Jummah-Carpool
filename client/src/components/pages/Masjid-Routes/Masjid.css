@@ -1,0 +1,24 @@
+.masjid-container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+/* Masjid Info form */
+.masjid-info-form {
+  width: 55%;
+  margin: auto;
+  margin-top: 6rem;
+  background-color: white;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+}
+
+.masjid-info-title-container {
+  margin-bottom: 1rem;
+}
+
+.masjid-info-title {
+  display: inline;
+  border-bottom: solid 4px #03a87c;
+  font-size: 2rem;
+}

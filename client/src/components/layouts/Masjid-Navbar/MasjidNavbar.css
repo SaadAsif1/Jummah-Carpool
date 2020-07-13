@@ -1,0 +1,61 @@
+.admin-navbar-container {
+  background-color: #22313f;
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  width: 12rem;
+  text-align: center;
+  color: white;
+  overflow: auto;
+}
+
+.admin-navbar-title-container {
+  padding: 2rem 0;
+  border-bottom: solid 2px white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.admin-nav-icon {
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.admin-navbar-title {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  font-size: 1.5rem;
+  font-family: cursive;
+}
+
+.admin-title-navbar {
+  color: white;
+  margin: 0;
+  margin-top: 0.3rem;
+  text-transform: capitalize;
+  font-size: 1.1rem;
+}
+
+.admin-navbar-links-container {
+  margin-top: 1rem;
+}
+
+.admin-nav-link {
+  display: block;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  color: white;
+  margin: 0.5rem 0;
+  transition: 0.2s;
+}
+
+.admin-nav-link:hover {
+  background-color: rgb(75, 91, 121);
+  color: white;
+  cursor: pointer;
+}
+
+.admin-container-body {
+  margin-left: 12rem;
+}

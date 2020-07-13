@@ -52,6 +52,7 @@ a {
   transition: 0.2s;
   outline: none;
   color: white;
+  background-color: #22313f;
 }
 
 .btn-inverted:hover {
@@ -107,4 +108,12 @@ a {
 .middle:hover:before {
   visibility: visible;
   transform: scaleX(1);
+}
+
+@media (max-width: 1070px) {
+  /* Home Contianer */
+  .home-container {
+    width: 100%;
+    padding: 1rem 2rem;
+  }
 }

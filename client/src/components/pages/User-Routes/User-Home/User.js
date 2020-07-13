@@ -1,8 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { signout } from '../../../helpers/auth';
+import { signout } from '../../../../helpers/auth';
 
-const Masjid = ({ history }) => {
+const User = ({ history }) => {
   // Signout
   const handleSignOut = () => {
     signout(() => {
@@ -12,7 +12,7 @@ const Masjid = ({ history }) => {
 
   return (
     <div>
-      <h1 style={{ color: 'white' }}>Masjid Route</h1>
+      <h1 style={{ color: 'white' }}>USER ROUTE</h1>
 
       <br />
       <button className='btn' onClick={handleSignOut}>
@@ -22,4 +22,4 @@ const Masjid = ({ history }) => {
   );
 };
 
-export default withRouter(Masjid);
+export default withRouter(User);
