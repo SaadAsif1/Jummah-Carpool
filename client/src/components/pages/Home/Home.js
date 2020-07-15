@@ -18,13 +18,13 @@ const Home = () => {
               with others etc
             </div>
             <div className='home-btn-container'>
-              <Link to='sign-in'>
+              <Link to='sign-up'>
                 <button
                   className='btn l-spacing home-btn'
                   style={{ padding: '0.5rem 2rem' }}
                   type='primary'
                 >
-                  Sign In
+                  Get Started
                 </button>
               </Link>
               <Link to='sign-up'>
@@ -33,7 +33,7 @@ const Home = () => {
                   style={{ padding: '0.4rem 2rem' }}
                   type='primary'
                 >
-                  Sign Up
+                  View Rides
                 </button>
               </Link>
             </div>

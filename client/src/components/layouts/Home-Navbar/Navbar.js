@@ -27,9 +27,9 @@ const Navbar = ({ history }) => {
         <Link to='/contact' className={navigation('/contact')}>
           Contact
         </Link>
-        <Link to='/register-masjid'>
+        <Link to='/sign-in'>
           <button style={{ marginLeft: '3rem' }} className='btn l-spacing' type='primary'>
-            Register Masjid
+            Login
           </button>
         </Link>
       </div>
