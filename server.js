@@ -10,7 +10,6 @@ app.use(sslRedirect());
 
 // Imports Routes
 const authRoute = require('./routes/auth');
-const masjidRoute = require('./routes/masjid');
 
 // dotenv
 dotenv.config({ path: './config/config.env' });
@@ -18,12 +17,11 @@ dotenv.config({ path: './config/config.env' });
 // Conntect to Database
 dbConnect();
 
-// Middleare
+// Middleware
 app.use(express.json());
 
 // Routes middlewares
 app.use('/api', authRoute);
-app.use('/api', masjidRoute);
 
 // Serve our static assets if in productions
 if (process.env.NODE_ENV === 'production') {
