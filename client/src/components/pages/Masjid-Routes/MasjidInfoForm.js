@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Redirect, withRouter } from 'react-router-dom';
 import axios from 'axios';
-import { Form, Input, TimePicker } from 'antd';
+import { Form, Input, TimePicker, Spin } from 'antd';
 import { isAuth, getCookie } from '../../../helpers/auth';
 import './Masjid.css';
 
@@ -219,7 +219,9 @@ const MasjidInfoForm = ({ history }) => {
           </div>
         )
       ) : (
-        <div></div>
+        <div className='align-center' style={{ marginTop: '50vh' }}>
+          <Spin size='large' />
+        </div>
       )}
     </div>
   );

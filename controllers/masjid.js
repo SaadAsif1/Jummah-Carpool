@@ -14,7 +14,7 @@ exports.getSingalMasjid = async (req, res) => {
 };
 
 // @ROUTE: POST /api/masjid/city/:id
-// @DESCRIPTION: Get All Masjid Based on City
+// @DESCRIPTION: Returns only citys of masjids
 // @ACCESS: Private
 exports.getMasjidByCity = async (req, res) => {
   const city = req.params.city.toLowerCase().replace(/-/g, ' ');
@@ -22,6 +22,15 @@ exports.getMasjidByCity = async (req, res) => {
   const masjidCity = await MasjidProfile.find({ city }).populate('masjid');
 
   res.json({ masjidProfile: masjidCity });
+};
+
+// @ROUTE: GET /api/masjid/cities
+// @DESCRIPTION: Get All Masjid Cities
+// @ACCESS: Private
+exports.getAllMasjidCities = (req, res) => {
+  MasjidProfile.find({}, ['city'], function (err, city) {
+    res.json({ cities: city });
+  });
 };
 
 // @ROUTE: POST /api/masjid/info
