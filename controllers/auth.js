@@ -2,7 +2,6 @@ const nodemailer = require('nodemailer');
 const jwt = require('jsonwebtoken');
 const _ = require('lodash');
 const User = require('../models/User');
-const MasjidProfile = require('../models/MasjidProfile');
 const {
   signupValidation,
   singinValidation,
@@ -101,33 +100,38 @@ exports.activation = async (req, res) => {
 
       // If token succfuly decoded
       try {
-        let user;
+        const user = new User({
+          name,
+          email,
+          age,
+          password,
+        });
 
-        if (JSON.parse(masjid)) {
-          // Create new User Masjid
-          user = new User({
-            name,
-            email,
-            age,
-            password,
-            role: 'masjid',
-          });
+        // if (JSON.parse(masjid)) {
+        //   // Create new User Masjid
+        //   user = new User({
+        //     name,
+        //     email,
+        //     age,
+        //     password,
+        //     role: 'masjid',
+        //   });
 
-          // create Random username
-          const newMasjidProfile = new MasjidProfile({
-            masjid: user,
-          });
+        //   // create Random username
+        //   const newMasjidProfile = new MasjidProfile({
+        //     masjid: user,
+        //   });
 
-          await newMasjidProfile.save();
-        } else {
-          // Create new User
-          user = new User({
-            name,
-            email,
-            age,
-            password,
-          });
-        }
+        //   await newMasjidProfile.save();
+        // } else {
+        //   // Create new User
+        //   user = new User({
+        //     name,
+        //     email,
+        //     age,
+        //     password,
+        //   });
+        // }
 
         // Save User to database
         const result = await user.save();

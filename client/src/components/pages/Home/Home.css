@@ -72,7 +72,7 @@
   }
 }
 
-@media (max-height: 570px) {
+@media (max-height: 672px) {
   .home-background {
     background-image: none;
     background-color: #22313f;

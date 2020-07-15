@@ -38,9 +38,9 @@ const SignIn = ({ location, history }) => {
         authenticate(response, () => {
           form.resetFields();
           setButtonText('Submit');
-          isAuth() && isAuth().role === 'masjid'
-            ? history.push('/masjid-info-form')
-            : history.push('/user-home');
+          if (isAuth()) {
+            history.push('/user-home');
+          }
         });
       })
       .catch((error) => {
