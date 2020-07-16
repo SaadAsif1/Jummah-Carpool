@@ -8,6 +8,7 @@ const {
   activation,
   forgotPassword,
   resetPassword,
+  apiAuth,
 } = require('../controllers/auth');
 
 // Sign Up a User

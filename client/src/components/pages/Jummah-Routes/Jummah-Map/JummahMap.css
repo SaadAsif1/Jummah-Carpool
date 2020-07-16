@@ -1,0 +1,18 @@
+.jummah-map-sidebar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  width: 20rem;
+  background-color: white;
+  padding: 0.8rem;
+  overflow-y: auto;
+}
+
+.jummah-map-box {
+  color: black;
+  border: solid 1px lightgray;
+  margin: 2rem 0;
+  padding: 1rem;
+  border-radius: 5px;
+}

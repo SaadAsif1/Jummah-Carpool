@@ -39,7 +39,7 @@ const SignIn = ({ location, history }) => {
           form.resetFields();
           setButtonText('Submit');
           if (isAuth()) {
-            history.push('/user-home');
+            history.push('/jummah-options');
           }
         });
       })
