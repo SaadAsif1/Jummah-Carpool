@@ -3,17 +3,32 @@
   bottom: 0;
   left: 0;
   top: 0;
-  width: 22rem;
+  width: 24rem;
   background-color: white;
-  padding: 0.8rem;
+  padding: 0.8rem 1.5rem;
   overflow-y: auto;
+}
+
+.jummah-map-sidebar::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.jummah-map-sidebar::-webkit-scrollbar-track {
+  background-color: #c0c0c0;
+  border-radius: 20px;
+}
+
+.jummah-map-sidebar::-webkit-scrollbar-thumb {
+  background-color: rgb(0, 0, 0, 0.7);
+  border-radius: 20px;
 }
 
 /* Driver Box */
 .jummah-map-box {
   color: black;
-  border: solid 01px gray;
+  border: solid 03px black;
   margin: 2rem 0;
+  margin-bottom: 3rem;
   padding: 0.5rem;
   border-radius: 5px;
   /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); */
@@ -28,7 +43,7 @@
 .jummah-map-main-title-div {
   width: 100%;
   background: rgba(150, 150, 150, 0.06);
-  border: 2px solid rgb(201, 201, 201);
+  border: 2px solid rgba(100, 100, 100);
   border-radius: 3px;
   color: rgba(0, 0, 0, 0.65);
   padding: 0.3rem;
@@ -46,6 +61,7 @@
   border-bottom-width: 2px;
   border-radius: 3px;
   padding: 0.3rem;
+  word-break: break-all; /* new */
 }
 
 .jummah-map-box-title {
@@ -53,8 +69,37 @@
   text-decoration: underline;
 }
 
+.map-post-title-container {
+  text-align: center;
+  margin: -0.4rem 0;
+  margin-bottom: 1rem;
+}
+
+.map-post-title {
+  display: inline;
+  font-size: 1.4rem;
+  /* font-family: 'Poppins', sans-serif; */
+  color: black;
+  border-bottom: solid 3px black;
+}
+
 .jummah-map-contact-container {
   margin: 1rem 0;
+}
+
+.btn-contact {
+  color: white;
+  width: 47%;
+  background-color: black;
+  padding: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+  transition: 0.2s;
+}
+
+.back-btn-map {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1px;
 }
 
 /* Map Legend */
@@ -64,18 +109,20 @@
   font-size: 1rem;
   display: block;
   width: 100%;
-  background-color: rgb(112, 61, 231);
+  background-color: black;
   color: white;
-  transition: 0.3s;
+  transition: 0.2s;
   margin-bottom: 2rem;
   padding: 0.4rem;
   margin-top: 1rem;
   font-family: 'Poppins', sans-serif;
 }
 
-.map-legend-btn:hover {
+.map-legend-btn:hover,
+.btn-contact:hover {
   cursor: pointer;
-  background-color: rgb(133, 97, 219);
+  background-color: rgb(58, 58, 58);
+  color: white;
 }
 
 .map-legend-title-container {

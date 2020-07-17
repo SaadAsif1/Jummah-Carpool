@@ -8,7 +8,7 @@ const { driverValidation } = require('../validators/driver');
 exports.getDriverByCity = async (req, res) => {
   const city = req.params.city.replace(/\s+/g, '-').toLowerCase();
 
-  const drivers = await Driver.find({ city }).populate('user');
+  const drivers = await Driver.find({ city }).populate('user').sort('-createdAt');
 
   res.json({ drivers });
 };
@@ -17,7 +17,9 @@ exports.getDriverByCity = async (req, res) => {
 // @DESCRIPTION:  Get Singal Post
 // @ACCESS: Public
 exports.getSingalDriverPost = async (req, res) => {
-  const drivers = await Driver.findOne({ _id: req.params.id }).populate('user');
+  const drivers = await Driver.findOne({ _id: req.params.id })
+    .populate('user')
+    .sort('-createdAt');
 
   if (!drivers) return res.status(400).json({ error: 'No post found!' });
 
@@ -29,7 +31,9 @@ exports.getSingalDriverPost = async (req, res) => {
 // @ACCESS: Private
 exports.getAllUserDriverPosts = async (req, res) => {
   console.log(req.user._id, 'skdjfklsdklfjklsdjfkldsj');
-  const driverPost = await Driver.find({ user: req.user._id }).populate('user');
+  const driverPost = await Driver.find({ user: req.user._id })
+    .populate('user')
+    .sort('-createdAt');
 
   res.json({ driverPost });
 };
