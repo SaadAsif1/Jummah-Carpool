@@ -4,7 +4,7 @@ exports.driverValidation = (driver) => {
   const schema = Joi.object({
     masjid_location: Joi.required(),
     time_leaving: Joi.string().required(),
-    jumma_timings: Joi.string().required(),
+    jumma_timings: Joi.required(),
     current_location: Joi.required(),
     city: Joi.string().lowercase().required(),
     phone_number: Joi.string().required(),

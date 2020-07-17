@@ -6,6 +6,12 @@ const About = () => {
   return (
     <div className="home-container">
       <HomeNavbar />
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <div>aad</div>
+=======
+=======
+>>>>>>> 54691d39658f32b34d2edfb7577656cce0fb2387
       <div className="about-container">
         <div className="about-p-container l-spacing">
           <h2 className="about-p-title">About Sakeenat Ibad-ur-Rehman</h2>
@@ -34,6 +40,10 @@ const About = () => {
           </p>
         </div>
       </div>
+<<<<<<< HEAD
+>>>>>>> 307bbb6b8f5d50414013a1baf38a4c3a6c834399
+=======
+>>>>>>> 54691d39658f32b34d2edfb7577656cce0fb2387
     </div>
   );
 };

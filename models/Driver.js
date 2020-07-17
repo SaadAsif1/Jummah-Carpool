@@ -43,4 +43,4 @@ const driverSchema = mongoose.Schema(
   { timestamps: true }
 ); //Created at and Updated at feild automatly generated
 
-module.exports = mongoose.model('Driver', driverSchema);
+module.exports = mongoose.model('Driver Posts', driverSchema);
