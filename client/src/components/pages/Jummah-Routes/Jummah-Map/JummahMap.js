@@ -8,7 +8,7 @@ import {
   Polyline,
 } from 'google-maps-react';
 import Axios from 'axios';
-import { Input } from 'antd';
+import { Input, Typography } from 'antd';
 import MapLegend from './MapLegend';
 import { withRouter } from 'react-router-dom';
 import { isAuth } from '../../../../helpers/auth';
@@ -16,6 +16,7 @@ import masjid from '../../../../assets/mosquee.png';
 import car from '../../../../assets/car-1.png';
 import person from '../../../../assets/person.png';
 import './JummahMap.css';
+const { Paragraph } = Typography;
 
 // Map Styles
 const mapStyles = {
@@ -53,7 +54,6 @@ export class JummahMap extends Component {
       .then((response) => {
         this.setState({
           data: response.data.drivers,
-          driverPostData: response.data.drivers,
         });
       })
       .catch((error) => {
@@ -197,6 +197,14 @@ export class JummahMap extends Component {
 
         {this.state.data ? (
           <div className='jummah-map-sidebar'>
+            <div className='map-post-title-container'>
+              <div className='map-post-title'>
+                {this.state.driverPostData.length > 0
+                  ? `${this.state.driverPostData[0].user.name} Driver Post`
+                  : `All Post's In City`}
+              </div>
+            </div>
+
             <Input
               size='large'
               style={{ color: 'black' }}
@@ -206,7 +214,24 @@ export class JummahMap extends Component {
 
             <MapLegend />
 
-            {this.state.driverPostData.map((driver, index) => (
+            <button
+              onClick={() => {
+                this.setState({ driverPostData: [] });
+              }}
+              style={
+                this.state.driverPostData.length > 0
+                  ? { display: 'block', width: '100%', marginTop: '-1rem' }
+                  : { display: 'none', width: '100%', marginTop: '-1rem' }
+              }
+              className='btn back-btn-map'
+            >
+              ← Back
+            </button>
+
+            {(this.state.driverPostData.length > 0
+              ? this.state.driverPostData
+              : this.state.data
+            ).map((driver, index) => (
               <div className='jummah-map-box' key={index}>
                 <div className='jummah-map-main-title'>
                   <div className='jummah-map-main-title-div'>{driver.user.name} </div>
@@ -248,6 +273,15 @@ export class JummahMap extends Component {
                 </div>
 
                 <div className='jummah-map-sub-box'>
+                  <div className='jummah-map-box-title'>Driver Message</div>
+                  <div className='jummah-map-box-body'>
+                    <Paragraph ellipsis={{ rows: 2, expandable: true, symbol: 'more' }}>
+                      {driver.message}
+                    </Paragraph>
+                  </div>
+                </div>
+
+                <div className='jummah-map-sub-box'>
                   <div className='jummah-map-box-title '>Contact {driver.user.name}</div>
                   <div
                     className='jummah-map-contact-container align-center flex-center'
@@ -256,8 +290,7 @@ export class JummahMap extends Component {
                     }}
                   >
                     <a
-                      className='btn'
-                      style={{ width: '48%', color: 'white' }}
+                      className='btn-contact'
                       href={`mailto:${
                         isAuth() && isAuth().email
                       }?subject=Jummah%20Carpool%20Passanger&body=Hi%20my%20name%20is%20${
@@ -268,8 +301,7 @@ export class JummahMap extends Component {
                       Email
                     </a>
                     <a
-                      className='btn'
-                      style={{ width: '48%', color: 'white' }}
+                      className='btn-contact'
                       href={`tel:${driver.phone_number}`}
                       disabled={isAuth() ? false : true}
                     >
