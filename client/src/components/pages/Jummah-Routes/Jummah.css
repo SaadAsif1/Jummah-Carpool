@@ -1,0 +1,63 @@
+/* Jummah Options */
+.jummah-options-container {
+  margin-top: 40vh;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+.jummah-options-title {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.jummah-options-btn {
+  margin: 0 2rem;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  padding: 0.5rem 2rem;
+  background-color: rgb(112, 61, 231);
+  border-radius: 50px;
+  color: white;
+  transition: 0.3s;
+  margin-bottom: 2rem;
+}
+
+.jummah-options-btn:hover {
+  cursor: pointer;
+  background-color: rgb(120, 93, 184);
+}
+
+.jummah-options-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(193, 174, 236, 0.5);
+}
+
+/* Jummah Address */
+.jummah-address-container {
+  width: 900px;
+  margin: 0 auto;
+  margin-top: 35vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+.jummah-address-title {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Search Suggestions */
+.search-suggestion {
+  margin-bottom: 0.1px;
+}
+
+/* Form */
+.driver-form {
+  background-color: white;
+  padding: 2rem;
+  width: 70%;
+  margin: 3rem auto;
+}

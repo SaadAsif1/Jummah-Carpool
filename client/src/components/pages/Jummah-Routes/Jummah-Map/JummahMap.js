@@ -1,0 +1,294 @@
+import React, { Component } from 'react';
+import {
+  Map,
+  GoogleApiWrapper,
+  InfoWindow,
+  Marker,
+  Circle,
+  Polyline,
+} from 'google-maps-react';
+import Axios from 'axios';
+import { Input } from 'antd';
+import MapLegend from './MapLegend';
+import { withRouter } from 'react-router-dom';
+import { isAuth } from '../../../../helpers/auth';
+import masjid from '../../../../assets/mosquee.png';
+import car from '../../../../assets/car-1.png';
+import person from '../../../../assets/person.png';
+import './JummahMap.css';
+
+// Map Styles
+const mapStyles = {
+  width: '100%',
+  height: '100%',
+};
+
+export class JummahMap extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showingInfoWindow: false, //Hides or the shows the infoWindow
+      activeMarker: {}, //Shows the active marker upon click
+      selectedPlace: {}, //Shows the infoWindow to the selected place upon a marker
+      coordinates: '',
+      address: '',
+      data: '',
+      driverPostData: '',
+    };
+  }
+
+  // Calls Api For Driver Data When components mounts
+  componentDidMount() {
+    // Check if the redirect from /auth/activate/:token sent use state
+    if (!this.props.location.state) {
+      return this.props.history.push('/jummah-address');
+    } else {
+      this.setState({
+        coordinates: this.props.location.state.coordinates,
+        address: this.props.location.state.address,
+      });
+    }
+
+    Axios.get('/api/driver/san-diego-county')
+      .then((response) => {
+        this.setState({
+          data: response.data.drivers,
+          driverPostData: response.data.drivers,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  // When a Marker Is clicked
+  onMarkerClick = (props, marker, e) =>
+    this.setState({
+      selectedPlace: props,
+      activeMarker: marker,
+      showingInfoWindow: true,
+    });
+
+  onClose = (props) => {
+    if (this.state.showingInfoWindow) {
+      this.setState({
+        showingInfoWindow: false,
+        activeMarker: null,
+      });
+    }
+  };
+
+  polylineCoords() {
+    let polylines = [];
+
+    this.state.data.map((locations) => {
+      polylines.push([
+        locations.masjid_location[0].coordinates,
+        locations.current_location[0].coordinates,
+      ]);
+    });
+
+    return polylines;
+  }
+
+  milesIntoMeters(value) {
+    return 1609.34 * value;
+  }
+
+  // Check If Authicated
+  authCheck() {
+    if (!isAuth()) {
+      this.props.history.push('/sign-up');
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        {this.state.data ? (
+          <Map
+            google={this.props.google}
+            zoom={14}
+            style={mapStyles}
+            initialCenter={this.state.coordinates}
+            streetViewControl={false}
+            mapTypeControl={false}
+          >
+            <Marker
+              position={this.state.coordinates}
+              icon={{
+                url: person,
+              }}
+              onClick={this.onMarkerClick}
+              name={`${this.state.address} (Your Current Location)`}
+            />
+            <Circle
+              radius={this.milesIntoMeters(JSON.parse(0.5))} // In Meters
+              center={this.state.coordinates}
+              strokeColor='transparent'
+              strokeOpacity={0}
+              strokeWeight={5}
+              fillColor='blue'
+              fillOpacity={0.2}
+            />
+
+            {this.polylineCoords().map((locations, index) => (
+              <Polyline
+                key={index}
+                path={locations}
+                strokeColor={'black'}
+                strokeOpacity={0.8}
+                strokeWeight={2}
+              />
+            ))}
+
+            {this.state.data.map((masjids, index) => (
+              <Marker
+                key={index}
+                id={index}
+                position={masjids.masjid_location[0].coordinates}
+                onClick={() => console.log('You clicked me!')}
+                icon={{
+                  url: masjid,
+                }}
+                onClick={this.onMarkerClick}
+                name={masjids.masjid_location[0].address}
+              />
+            ))}
+
+            {this.state.data.map((driverCurrent, index) => (
+              <Marker
+                key={index}
+                id={index}
+                position={driverCurrent.current_location[0].coordinates}
+                onClick={() => this.setState({ driverPostData: [driverCurrent] })}
+                icon={{
+                  url: car,
+                }}
+                name={driverCurrent.current_location[0].address}
+              />
+            ))}
+
+            <InfoWindow
+              marker={this.state.activeMarker}
+              visible={this.state.showingInfoWindow}
+              onClose={this.onClose}
+            >
+              <div>
+                <h4>{this.state.selectedPlace.name}</h4>
+              </div>
+            </InfoWindow>
+
+            {this.state.data.map((radius, index) => (
+              <Circle
+                key={index}
+                radius={this.milesIntoMeters(JSON.parse(radius.radius_in_miles))} // In Meters
+                center={radius.current_location[0].coordinates}
+                strokeColor='transparent'
+                strokeOpacity={0}
+                strokeWeight={5}
+                fillColor='#FF0000'
+                fillOpacity={0.2}
+              />
+            ))}
+          </Map>
+        ) : (
+          <div></div>
+        )}
+
+        {this.state.data ? (
+          <div className='jummah-map-sidebar'>
+            <Input
+              size='large'
+              style={{ color: 'black' }}
+              value={this.state.address}
+              disabled
+            />
+
+            <MapLegend />
+
+            {this.state.driverPostData.map((driver, index) => (
+              <div className='jummah-map-box' key={index}>
+                <div className='jummah-map-main-title'>
+                  <div className='jummah-map-main-title-div'>{driver.user.name} </div>
+                  <div className='jummah-map-main-title-div'>
+                    {new Date(driver.createdAt).toLocaleDateString('en-US', {
+                      weekday: 'long',
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                  </div>
+                </div>
+                <div className='jummah-map-sub-box'>
+                  <div className='jummah-map-box-title'>Masjid</div>
+                  <div className='jummah-map-box-body'>
+                    {driver.masjid_location[0].address}
+                  </div>
+                </div>
+
+                <div className='jummah-map-sub-box'>
+                  <div className='jummah-map-box-title'>Jummah Timings (Friday)</div>
+                  <div className='jummah-map-box-body'>
+                    {driver.jumma_timings[0].start} - {driver.jumma_timings[0].end}
+                  </div>
+                </div>
+
+                <div className='jummah-map-sub-box'>
+                  <div className='jummah-map-box-title'>Current Location</div>
+                  <div className='jummah-map-box-body'>
+                    {driver.current_location[0].address}
+                  </div>
+                </div>
+
+                <div className='jummah-map-sub-box'>
+                  <div className='jummah-map-box-title'>
+                    Time Leaving Current Location
+                  </div>
+                  <div className='jummah-map-box-body'>{driver.time_leaving}</div>
+                </div>
+
+                <div className='jummah-map-sub-box'>
+                  <div className='jummah-map-box-title '>Contact {driver.user.name}</div>
+                  <div
+                    className='jummah-map-contact-container align-center flex-center'
+                    onClick={() => {
+                      this.authCheck();
+                    }}
+                  >
+                    <a
+                      className='btn'
+                      style={{ width: '48%', color: 'white' }}
+                      href={`mailto:${
+                        isAuth() && isAuth().email
+                      }?subject=Jummah%20Carpool%20Passanger&body=Hi%20my%20name%20is%20${
+                        isAuth() && isAuth().email
+                      }%20I%20want%20to%20ride%20with%20you%20because%20I%20saw%20your%20posting%20on%20the%20website`}
+                      disabled={isAuth() ? false : true}
+                    >
+                      Email
+                    </a>
+                    <a
+                      className='btn'
+                      style={{ width: '48%', color: 'white' }}
+                      href={`tel:${driver.phone_number}`}
+                      disabled={isAuth() ? false : true}
+                    >
+                      Phone Number
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div></div>
+        )}
+      </div>
+    );
+  }
+}
+
+export default GoogleApiWrapper({
+  apiKey: 'AIzaSyBYHSjax_jdoZXv-eNPEwRx7lFF5FlJ3qU',
+})(withRouter(JummahMap));

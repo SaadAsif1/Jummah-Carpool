@@ -16,8 +16,11 @@ import ResetPassword from './components/auth/ResetPassword';
 // Private Routes
 import UserRoute from './UserRoute';
 
-// User Routes
-import UserHome from './components/pages/User-Routes/User-Home/User';
+// Jummah Routes
+import JummaOptions from './components/pages/Jummah-Routes/JummahOptions';
+import JummaAddress from './components/pages/Jummah-Routes/JummahAddress';
+import JummaMap from './components/pages/Jummah-Routes/Jummah-Map/JummahMap';
+import RegisterDriver from './components/pages/Jummah-Routes/RejisterDriver';
 
 const Routes = () => {
   return (
@@ -33,8 +36,10 @@ const Routes = () => {
         <Route exact path='/forgot-password' component={ForgotPassword} />
         <Route exact path='/auth/password/reset/:token' component={ResetPassword} />
         <Route exact path='/auth/activate/:token' component={Activate} />
-
-        <UserRoute exact path='/user-home' component={UserHome} />
+        <Route exact path='/jummah-options' component={JummaOptions} />
+        <Route exact path='/jummah-address' component={JummaAddress} />
+        <Route exact path='/jummah-map' component={JummaMap} />
+        <Route exact path='/register-driver' component={RegisterDriver} />
       </Switch>
     </BrowserRouter>
   );
