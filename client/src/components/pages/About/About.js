@@ -2,7 +2,7 @@ import React from 'react';
 import HomeNavbar from '../../layouts/Home-Navbar/Navbar';
 import './About.css';
 
-// About Page
+// About Page Test
 const About = () => {
   return (
     <div className='home-container'>
