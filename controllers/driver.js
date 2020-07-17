@@ -6,7 +6,7 @@ const { driverValidation } = require('../validators/driver');
 // @DESCRIPTION:  Gets All drivers by city
 // @ACCESS: Public
 exports.getDriverByCity = async (req, res) => {
-  const city = req.params.city.toLowerCase().replace(' ', '-');
+  const city = req.params.city.replace(/\s+/g, '-').toLowerCase();
 
   const drivers = await Driver.find({ city }).populate('user');
 
@@ -53,6 +53,7 @@ exports.createsDriverPost = async (req, res) => {
     phone_number,
     radius_in_miles,
     message,
+    polyline,
   } = value;
 
   // Get Signed in user
@@ -65,7 +66,7 @@ exports.createsDriverPost = async (req, res) => {
     time_leaving,
     jumma_timings,
     current_location,
-    city: city.replace(' ', '-'),
+    city: city.replace(/\s+/g, '-').toLowerCase(),
     phone_number,
     radius_in_miles,
     message,
