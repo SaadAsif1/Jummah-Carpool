@@ -147,12 +147,11 @@ export class JummahMap extends Component {
                 key={index}
                 id={index}
                 position={masjids.masjid_location[0].coordinates}
-                onClick={() => console.log('You clicked me!')}
                 icon={{
                   url: masjid,
                 }}
                 onClick={this.onMarkerClick}
-                name={masjids.masjid_location[0].address}
+                name={`${masjids.masjid_location[0].address} (${masjids.user.name} Destination)`}
               />
             ))}
 
