@@ -16,7 +16,7 @@ const driverSchema = mongoose.Schema(
       required: true,
     },
     jumma_timings: {
-      type: String,
+      type: Array,
       required: true,
     },
     current_location: {

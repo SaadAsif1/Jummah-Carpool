@@ -5,6 +5,7 @@ const About = () => {
   return (
     <div className='home-container'>
       <HomeNavbar />
+      <div>aad</div>
     </div>
   );
 };

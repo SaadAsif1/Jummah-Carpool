@@ -98,7 +98,7 @@ const Team = () => {
           <img src={Abdullah} alt='Abdullah' className='team-img' />
           <div className='team-dec-container'>
             <div className='team-role'>Front End Developer</div>
-            <div className='team-name'>Abdullah Atalla</div>
+            <div className='team-name'>Abdalla Atalla</div>
             <a
               target='_blank'
               rel='noopener noreferrer'

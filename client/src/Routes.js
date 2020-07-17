@@ -19,7 +19,7 @@ import UserRoute from './UserRoute';
 // Jummah Routes
 import JummaOptions from './components/pages/Jummah-Routes/JummahOptions';
 import JummaAddress from './components/pages/Jummah-Routes/JummahAddress';
-import JummaMap from './components/pages/Jummah-Routes/Jummah-Map/JummahPage';
+import JummaMap from './components/pages/Jummah-Routes/Jummah-Map/JummahMap';
 import RegisterDriver from './components/pages/Jummah-Routes/RejisterDriver';
 
 const Routes = () => {

@@ -3,16 +3,134 @@
   bottom: 0;
   left: 0;
   top: 0;
-  width: 20rem;
+  width: 22rem;
   background-color: white;
   padding: 0.8rem;
   overflow-y: auto;
 }
 
+/* Driver Box */
 .jummah-map-box {
   color: black;
-  border: solid 1px lightgray;
+  border: solid 01px lightgray;
   margin: 2rem 0;
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: 5px;
+  /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  padding-top: 0.8rem;
+}
+
+.jummah-map-main-title {
+  font-weight: 700;
+}
+
+.jummah-map-main-title-div {
+  width: 100%;
+  background: rgba(150, 150, 150, 0.06);
+  border: 2px solid rgb(201, 201, 201);
+  border-radius: 3px;
+  color: rgba(0, 0, 0, 0.65);
+  padding: 0.3rem;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.jummah-map-sub-box {
+  background-color: #e6e6e6;
+  margin: 0.5rem 0;
+  background: rgba(150, 150, 150, 0.06);
+  border: 1px solid rgba(100, 100, 100, 0.2);
+  border-bottom-width: 2px;
+  border-radius: 3px;
+  padding: 0.3rem;
+}
+
+.jummah-map-box-title {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.jummah-map-contact-container {
+  margin: 1rem 0;
+}
+
+/* Map Legend */
+.map-legend-btn {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  display: block;
+  width: 100%;
+  background-color: rgb(112, 61, 231);
+  color: white;
+  transition: 0.3s;
+  margin-bottom: 2rem;
+  padding: 0.4rem;
+  margin-top: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.map-legend-btn:hover {
+  cursor: pointer;
+  background-color: rgb(133, 97, 219);
+}
+
+.map-legend-title-container {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.map-legend-title {
+  display: inline;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: black;
+  border-bottom: solid 3px rgb(112, 61, 231);
+  font-size: 1.4rem;
+}
+
+.map-legend {
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+.map-legend-box {
+  color: black;
+  border: solid 1px lightgray;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.map-legend-dec {
+  margin-top: 0.5rem;
+  border-top: solid 0.5px lightgray;
+  padding-top: 0.5rem;
+}
+
+.map-legend-circle-person {
+  background-color: rgb(0, 0, 255, 0.2);
+  padding: 1rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.map-legend-circle-driver {
+  background-color: rgb(255, 0, 0, 0.4);
+  padding: 1rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.map-legend-line {
+  width: 90px;
+  height: 47px;
+  border-bottom: 2px solid black;
+  -webkit-transform: translateY(-20px) translateX(5px) rotate(27deg);
 }
