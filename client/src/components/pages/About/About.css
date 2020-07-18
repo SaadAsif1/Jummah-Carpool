@@ -1,0 +1,24 @@
+.about-container {
+  color: white;
+  margin: 40px 50px;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
+  background-color: #314252;
+  padding: 2em;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  border-radius: 10px;
+}
+
+.about-section {
+  margin-bottom: 40px;
+}
+
+.about-section h2 {
+  color: white;
+  margin-bottom: -1px;
+}
+
+.about-section p {
+  color: lightgray;
+  font-size: 0.9em;
+}
