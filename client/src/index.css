@@ -37,6 +37,7 @@ a {
 .btn:hover {
   background-color: #25cfa2;
   cursor: pointer;
+  color: white;
 }
 
 .btn:focus {

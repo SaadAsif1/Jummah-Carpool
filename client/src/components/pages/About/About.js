@@ -1,6 +1,7 @@
 import React from "react";
 import HomeNavbar from "../../layouts/Home-Navbar/Navbar";
 import "./About.css";
+
 const About = () => {
   return (
     <div className="home-container">

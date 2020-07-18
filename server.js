@@ -10,6 +10,7 @@ app.use(sslRedirect());
 
 // Imports Routes
 const authRoute = require('./routes/auth');
+const driverRoute = require('./routes/driver');
 
 // dotenv
 dotenv.config({ path: './config/config.env' });
@@ -22,6 +23,7 @@ app.use(express.json());
 
 // Routes middlewares
 app.use('/api', authRoute);
+app.use('/api', driverRoute);
 
 // Serve our static assets if in productions
 if (process.env.NODE_ENV === 'production') {
