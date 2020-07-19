@@ -50,7 +50,11 @@ export class JummahMap extends Component {
       });
     }
 
-    Axios.get('/api/driver/san-diego-county')
+    Axios.get(
+      `/api/driver/${this.props.location.state.curCity.city
+        .replace(/\s+/g, '-')
+        .toLowerCase()}`
+    )
       .then((response) => {
         this.setState({
           data: response.data.drivers,

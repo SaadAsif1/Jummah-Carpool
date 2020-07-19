@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import HomeNavbar from '../../layouts/Home-Navbar/Navbar';
-import Product from '../../../assets/product.svg';
-import './Home.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import HomeNavbar from "../../layouts/Home-Navbar/Navbar";
+import Product from "../../../assets/product.svg";
+import "./Home.css";
 
 const Home = () => {
   return (
@@ -11,7 +11,7 @@ const Home = () => {
         <HomeNavbar />
 
         <div className='home-landing-container'>
-          <div className='home-landing-left animated slideInLeft'>
+          <div className='home-landing-left animated slideInLeft align-center'>
             <h1 className='home-main-text'>Jummah Connections</h1>
             <div className='home-sub-text'>
               Jummah carpooling website. Map feature to see what mosque is near. Connect
@@ -21,7 +21,7 @@ const Home = () => {
               <Link to='/jummah-options'>
                 <button
                   className='btn l-spacing home-btn'
-                  style={{ padding: '0.5rem 2rem' }}
+                  style={{ padding: "0.5rem 2rem" }}
                   type='primary'
                 >
                   Get Started
