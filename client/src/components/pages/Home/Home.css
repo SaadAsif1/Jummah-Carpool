@@ -17,6 +17,7 @@
 /* Landing Home (Button) */
 .home-btn-container {
   margin-top: 2rem;
+  text-align: center;
 }
 
 .home-btn {

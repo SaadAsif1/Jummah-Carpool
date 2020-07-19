@@ -18,22 +18,13 @@ const Home = () => {
               with others etc
             </div>
             <div className='home-btn-container'>
-              <Link to='/sign-up'>
+              <Link to='/jummah-options'>
                 <button
                   className='btn l-spacing home-btn'
                   style={{ padding: '0.5rem 2rem' }}
                   type='primary'
                 >
                   Get Started
-                </button>
-              </Link>
-              <Link to='/jummah-options'>
-                <button
-                  className='btn-inverted l-spacing home-btn'
-                  style={{ padding: '0.4rem 2rem' }}
-                  type='primary'
-                >
-                  View Rides
                 </button>
               </Link>
             </div>
