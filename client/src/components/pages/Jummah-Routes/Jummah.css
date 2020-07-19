@@ -18,7 +18,7 @@
   outline: none;
   font-size: 1.2rem;
   padding: 0.5rem 2rem;
-  background-color: rgb(112, 61, 231);
+  background-color: #03a87c;
   border-radius: 50px;
   color: white;
   transition: 0.3s;
@@ -27,12 +27,12 @@
 
 .jummah-options-btn:hover {
   cursor: pointer;
-  background-color: rgb(120, 93, 184);
+  background-color: #058f6a;
 }
 
 .jummah-options-btn:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(193, 174, 236, 0.5);
+  box-shadow: 0 0 0 3px #06bd8c;
 }
 
 /* Jummah Address */
