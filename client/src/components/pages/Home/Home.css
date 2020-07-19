@@ -4,7 +4,7 @@
   height: 100vh;
   background-image: linear-gradient(176deg, #22313f 70%, #e7e7e7 calc(70% + 2px));
   overflow-x: hidden;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 /* Landing Home */
@@ -17,27 +17,28 @@
 /* Landing Home (Button) */
 .home-btn-container {
   margin-top: 2rem;
+  text-align: center;
 }
 
 .home-btn {
-  margin-right: 2rem;
 }
 
 /* Landing Home (Left) */
 .home-landing-left {
-  width: 50%;
+  text-align: center;
   color: white;
   margin-top: 6rem;
+  margin-right: 5rem;
 }
 
 .home-main-text {
   color: white;
   font-size: 2.4rem;
   letter-spacing: 1px;
+  text-align: center;
 }
 
 .home-sub-text {
-  width: 90%;
   font-size: 0.9rem;
   letter-spacing: 1px;
   color: lightgrey;

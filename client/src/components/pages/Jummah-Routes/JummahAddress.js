@@ -66,7 +66,7 @@ function JummahAddress() {
 
   return (
     <div className='jummah-address-container'>
-      <div className='align-center jummah-address-title'>Please Enter Your Address</div>
+      <div className='align-center jummah-address-title'>What City Are You In?</div>
       <PlacesAutocomplete value={address} onChange={setAddress} onSelect={handleSelect}>
         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
           <div>
