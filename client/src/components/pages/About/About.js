@@ -44,7 +44,7 @@ const About = () => {
             </p>
           </div>
         </div>
-      </div>{' '}
+      </div>
     </div>
   );
 };

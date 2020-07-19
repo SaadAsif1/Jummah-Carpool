@@ -13,7 +13,9 @@ Geocode.setApiKey('AIzaSyBYHSjax_jdoZXv-eNPEwRx7lFF5FlJ3qU');
 
 function JummahAddress() {
   const [address, setAddress] = React.useState('');
-  const [curCity, setCity] = React.useState('');
+  const [curCity, setCity] = React.useState({
+    city: '',
+  });
   const [coordinates, setCoordinates] = React.useState({
     lat: null,
     lng: null,
@@ -25,14 +27,13 @@ function JummahAddress() {
     const latLng = await getLatLng(results[0]);
     setAddress(value);
     setCoordinates(latLng);
-    console.log(latLng);
 
     Geocode.fromLatLng(latLng.lat, latLng.lng).then(
       (response) => {
         const addressArray = response.results[0].address_components;
         const city = getCity(addressArray);
 
-        setCity({ city: city ? city : '' });
+        setCity({ city: city ? city : true });
       },
       (error) => {
         console.error(error);
@@ -54,8 +55,14 @@ function JummahAddress() {
     }
   };
 
-  // <p>Latitude: {coordinates.lat}</p>
-  // <p>Longitude: {coordinates.lng}</p>
+  // city Disabled
+  const disableCity = () => {
+    if (curCity.city === true) {
+      return true;
+    } else {
+      return false;
+    }
+  };
 
   return (
     <div className='jummah-address-container'>
@@ -94,14 +101,15 @@ function JummahAddress() {
         <Link
           to={{
             pathname: '/jummah-map',
-            state: { address, coordinates },
+            state: { address, coordinates, curCity },
           }}
-          disabled={curCity ? false : true}
+          disabled={disableCity()}
         >
           <button
             className='jummah-options-btn align-center'
             style={{ borderRadius: '0', margin: '2rem 0' }}
             onClick={() => console.log(address, coordinates, curCity)}
+            disabled={disableCity()}
           >
             Next
           </button>
