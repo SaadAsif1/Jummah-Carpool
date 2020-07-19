@@ -92,12 +92,12 @@
   width: 47%;
   background-color: black;
   padding: 0.5rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   transition: 0.2s;
 }
 
 .back-btn-map {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1rem;
   letter-spacing: 1px;
 }
@@ -115,7 +115,7 @@
   margin-bottom: 2rem;
   padding: 0.4rem;
   margin-top: 1rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .map-legend-btn:hover,
@@ -125,6 +125,12 @@
   color: white;
 }
 
+.sign-contact-btn {
+  width: 100%;
+  margin: 0.7rem 0;
+  font-family: "Poppins", sans-serif;
+}
+
 .map-legend-title-container {
   text-align: center;
   margin-bottom: 1rem;
@@ -132,7 +138,7 @@
 
 .map-legend-title {
   display: inline;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 700;
   color: black;
   border-bottom: solid 3px rgb(112, 61, 231);

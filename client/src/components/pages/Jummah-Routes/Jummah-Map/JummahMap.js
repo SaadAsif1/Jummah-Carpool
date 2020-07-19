@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   Map,
   GoogleApiWrapper,
@@ -6,22 +6,22 @@ import {
   Marker,
   Circle,
   Polyline,
-} from 'google-maps-react';
-import Axios from 'axios';
-import { Input, Typography } from 'antd';
-import MapLegend from './MapLegend';
-import { withRouter } from 'react-router-dom';
-import { isAuth } from '../../../../helpers/auth';
-import masjid from '../../../../assets/mosquee.png';
-import car from '../../../../assets/car-1.png';
-import person from '../../../../assets/person.png';
-import './JummahMap.css';
+} from "google-maps-react";
+import Axios from "axios";
+import { Input, Typography } from "antd";
+import MapLegend from "./MapLegend";
+import { withRouter, Link } from "react-router-dom";
+import { isAuth } from "../../../../helpers/auth";
+import masjid from "../../../../assets/mosquee.png";
+import car from "../../../../assets/car-1.png";
+import person from "../../../../assets/person.png";
+import "./JummahMap.css";
 const { Paragraph } = Typography;
 
 // Map Styles
 const mapStyles = {
-  width: '100%',
-  height: '100%',
+  width: "100%",
+  height: "100%",
 };
 
 export class JummahMap extends Component {
@@ -31,10 +31,10 @@ export class JummahMap extends Component {
       showingInfoWindow: false, //Hides or the shows the infoWindow
       activeMarker: {}, //Shows the active marker upon click
       selectedPlace: {}, //Shows the infoWindow to the selected place upon a marker
-      coordinates: '',
-      address: '',
-      data: '',
-      driverPostData: '',
+      coordinates: "",
+      address: "",
+      data: "",
+      driverPostData: "",
     };
   }
 
@@ -42,7 +42,7 @@ export class JummahMap extends Component {
   componentDidMount() {
     // Check if the redirect from /auth/activate/:token sent use state
     if (!this.props.location.state) {
-      return this.props.history.push('/jummah-address');
+      return this.props.history.push("/jummah-address");
     } else {
       this.setState({
         coordinates: this.props.location.state.coordinates,
@@ -52,7 +52,7 @@ export class JummahMap extends Component {
 
     Axios.get(
       `/api/driver/${this.props.location.state.curCity.city
-        .replace(/\s+/g, '-')
+        .replace(/\s+/g, "-")
         .toLowerCase()}`
     )
       .then((response) => {
@@ -99,13 +99,6 @@ export class JummahMap extends Component {
     return 1609.34 * value;
   }
 
-  // Check If Authicated
-  authCheck() {
-    if (!isAuth()) {
-      this.props.history.push('/sign-up');
-    }
-  }
-
   render() {
     return (
       <div>
@@ -140,7 +133,7 @@ export class JummahMap extends Component {
               <Polyline
                 key={index}
                 path={locations}
-                strokeColor={'black'}
+                strokeColor={"black"}
                 strokeOpacity={0.8}
                 strokeWeight={2}
               />
@@ -211,7 +204,7 @@ export class JummahMap extends Component {
 
             <Input
               size='large'
-              style={{ color: 'black' }}
+              style={{ color: "black" }}
               value={this.state.address}
               disabled
             />
@@ -224,8 +217,8 @@ export class JummahMap extends Component {
               }}
               style={
                 this.state.driverPostData.length > 0
-                  ? { display: 'block', width: '100%', marginTop: '-1rem' }
-                  : { display: 'none', width: '100%', marginTop: '-1rem' }
+                  ? { display: "block", width: "100%", marginTop: "-1rem" }
+                  : { display: "none", width: "100%", marginTop: "-1rem" }
               }
               className='btn back-btn-map'
             >
@@ -240,11 +233,11 @@ export class JummahMap extends Component {
                 <div className='jummah-map-main-title'>
                   <div className='jummah-map-main-title-div'>{driver.user.name} </div>
                   <div className='jummah-map-main-title-div'>
-                    {new Date(driver.createdAt).toLocaleDateString('en-US', {
-                      weekday: 'long',
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric',
+                    {new Date(driver.createdAt).toLocaleDateString("en-US", {
+                      weekday: "long",
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
                     })}
                   </div>
                 </div>
@@ -279,7 +272,7 @@ export class JummahMap extends Component {
                 <div className='jummah-map-sub-box'>
                   <div className='jummah-map-box-title'>Driver Message</div>
                   <div className='jummah-map-box-body'>
-                    <Paragraph ellipsis={{ rows: 2, expandable: true, symbol: 'more' }}>
+                    <Paragraph ellipsis={{ rows: 2, expandable: true, symbol: "more" }}>
                       {driver.message}
                     </Paragraph>
                   </div>
@@ -287,31 +280,35 @@ export class JummahMap extends Component {
 
                 <div className='jummah-map-sub-box'>
                   <div className='jummah-map-box-title '>Contact {driver.user.name}</div>
-                  <div
-                    className='jummah-map-contact-container align-center flex-center'
-                    onClick={() => {
-                      this.authCheck();
-                    }}
-                  >
-                    <a
-                      className='btn-contact'
-                      href={`mailto:${
-                        isAuth() && isAuth().email
-                      }?subject=Jummah%20Carpool%20Passanger&body=Hi%20my%20name%20is%20${
-                        isAuth() && isAuth().email
-                      }%20I%20want%20to%20ride%20with%20you%20because%20I%20saw%20your%20posting%20on%20the%20website`}
-                      disabled={isAuth() ? false : true}
+                  {isAuth() ? (
+                    <div
+                      className='jummah-map-contact-container align-center flex-center'
+                      style={{ color: "white" }}
                     >
-                      Email
-                    </a>
-                    <a
-                      className='btn-contact'
-                      href={`tel:${driver.phone_number}`}
-                      disabled={isAuth() ? false : true}
-                    >
-                      Phone Number
-                    </a>
-                  </div>
+                      <a
+                        className='btn-contact'
+                        href={`mailto:${
+                          isAuth() && isAuth().email
+                        }?subject=Jummah%20Carpool%20Passanger&body=Hi%20my%20name%20is%20${
+                          isAuth() && isAuth().email
+                        }%20I%20want%20to%20ride%20with%20you%20because%20I%20saw%20your%20posting%20on%20the%20website`}
+                        disabled={isAuth() ? false : true}
+                      >
+                        Email
+                      </a>
+                      <a
+                        className='btn-contact'
+                        href={`tel:${driver.phone_number}`}
+                        disabled={isAuth() ? false : true}
+                      >
+                        Phone Number
+                      </a>
+                    </div>
+                  ) : (
+                    <Link to='/sign-up'>
+                      <button className='btn sign-contact-btn'>Sign Up To View</button>
+                    </Link>
+                  )}
                 </div>
               </div>
             ))}
@@ -325,5 +322,5 @@ export class JummahMap extends Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyBYHSjax_jdoZXv-eNPEwRx7lFF5FlJ3qU',
+  apiKey: "AIzaSyBYHSjax_jdoZXv-eNPEwRx7lFF5FlJ3qU",
 })(withRouter(JummahMap));
