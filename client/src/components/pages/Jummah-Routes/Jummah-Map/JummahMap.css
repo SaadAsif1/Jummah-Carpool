@@ -141,7 +141,7 @@
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   color: black;
-  border-bottom: solid 3px rgb(112, 61, 231);
+  border-bottom: solid 3px black;
   font-size: 1.4rem;
 }
 
@@ -163,22 +163,6 @@
   margin-top: 0.5rem;
   border-top: solid 0.5px lightgray;
   padding-top: 0.5rem;
-}
-
-.map-legend-circle-person {
-  background-color: rgb(0, 0, 255, 0.2);
-  padding: 1rem;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-}
-
-.map-legend-circle-driver {
-  background-color: rgb(255, 0, 0, 0.4);
-  padding: 1rem;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
 }
 
 .map-legend-line {

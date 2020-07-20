@@ -1,19 +1,19 @@
-const path = require('path');
-const express = require('express');
-const dotenv = require('dotenv');
-const dbConnect = require('./config/dbConnect');
-const sslRedirect = require('heroku-ssl-redirect');
+const path = require("path");
+const express = require("express");
+const dotenv = require("dotenv");
+const dbConnect = require("./config/dbConnect");
+const sslRedirect = require("heroku-ssl-redirect");
 const app = express();
 
 // enable ssl redirect
 app.use(sslRedirect());
 
 // Imports Routes
-const authRoute = require('./routes/auth');
-const driverRoute = require('./routes/driver');
+const authRoute = require("./routes/auth");
+const driverRoute = require("./routes/driver");
 
 // dotenv
-dotenv.config({ path: './config/config.env' });
+dotenv.config({ path: "./config/config.env" });
 
 // Conntect to Database
 dbConnect();
@@ -22,16 +22,16 @@ dbConnect();
 app.use(express.json());
 
 // Routes middlewares
-app.use('/api', authRoute);
-app.use('/api', driverRoute);
+app.use("/api", authRoute);
+app.use("/api", driverRoute);
 
 // Serve our static assets if in productions
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === "production") {
   // Set static folder
-  app.use(express.static('client/build'));
+  app.use(express.static("client/build"));
 
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
 

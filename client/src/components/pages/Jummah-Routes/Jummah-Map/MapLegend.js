@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Modal, Button } from 'antd';
-import Person from '../../../../assets/person.png';
-import Car from '../../../../assets/car-1.png';
-import Masjid from '../../../../assets/mosquee.png';
+import React, { useState } from "react";
+import { Modal, Button } from "antd";
+import Person from "../../../../assets/person.png";
+import Car from "../../../../assets/car-1.png";
+import Masjid from "../../../../assets/mosquee.png";
 
 const MapLegend = () => {
   const [visable, setVisable] = useState(true);
@@ -51,22 +51,6 @@ const MapLegend = () => {
             <img src={Masjid} className='map-legend-img' alt='Masjid' />
             <div className='map-legend-dec'>
               This pin represents a the location of a Mosque
-            </div>
-          </div>
-
-          <div className='map-legend-box'>
-            <div className='map-legend-circle-person'></div>
-            <div className='map-legend-dec'>
-              This radius circle is predefine by us. If any drivers are in this radius we
-              recommand to contact them this way they will most likey carpool.
-            </div>
-          </div>
-
-          <div className='map-legend-box'>
-            <div className='map-legend-circle-driver'></div>
-            <div className='map-legend-dec'>
-              This radius circle is set by the driver. This defined by the driver. This
-              shows how far the driver is willing to go to pick some one up.
             </div>
           </div>
 

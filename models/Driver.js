@@ -1,11 +1,11 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 // Driver Schema
 const driverSchema = mongoose.Schema(
   {
     user: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'User',
+      ref: "User",
     },
     masjid_location: {
       type: Array,
@@ -31,16 +31,12 @@ const driverSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    radius_in_miles: {
-      type: String,
-      required: true,
-    },
     message: {
       type: String,
-      default: '',
+      default: "",
     },
   },
   { timestamps: true }
 ); //Created at and Updated at feild automatly generated
 
-module.exports = mongoose.model('Driver Posts', driverSchema);
+module.exports = mongoose.model("Driver Posts", driverSchema);
