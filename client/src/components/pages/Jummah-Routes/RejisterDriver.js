@@ -7,6 +7,7 @@ import PlacesAutocomplete, {
 import { GoogleApiWrapper } from "google-maps-react";
 import { withRouter } from "react-router-dom";
 import Geocode from "react-geocode";
+import { EnvironmentFilled } from "@ant-design/icons";
 import { isAuth, getCookie } from "../../../helpers/auth";
 import axios from "axios";
 
@@ -184,7 +185,7 @@ const RejisterDriver = ({ history }) => {
                         className='search-suggestion'
                         {...getSuggestionItemProps(suggestion, { style })}
                       >
-                        {suggestion.description}
+                        <EnvironmentFilled /> {suggestion.description}
                       </div>
                     );
                   })}
@@ -261,7 +262,7 @@ const RejisterDriver = ({ history }) => {
                         className='search-suggestion'
                         {...getSuggestionItemProps(suggestion, { style })}
                       >
-                        {suggestion.description}
+                        <EnvironmentFilled /> {suggestion.description}
                       </div>
                     );
                   })}
