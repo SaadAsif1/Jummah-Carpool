@@ -7,6 +7,7 @@ import PlacesAutocomplete, {
 } from "react-places-autocomplete";
 import { GoogleApiWrapper } from "google-maps-react";
 import Geocode from "react-geocode";
+import { EnvironmentFilled } from "@ant-design/icons";
 import "./Jummah.css";
 
 Geocode.setApiKey("AIzaSyBYHSjax_jdoZXv-eNPEwRx7lFF5FlJ3qU");
@@ -86,8 +87,6 @@ function JummahAddress({ location }) {
             />
 
             <div>
-              {loading ? <div></div> : null}
-
               {suggestions.map((suggestion, index) => {
                 const style = {
                   backgroundColor: suggestion.active
@@ -98,7 +97,7 @@ function JummahAddress({ location }) {
 
                 return (
                   <div key={index} {...getSuggestionItemProps(suggestion, { style })}>
-                    {suggestion.description}
+                    <EnvironmentFilled /> {suggestion.description}
                   </div>
                 );
               })}
