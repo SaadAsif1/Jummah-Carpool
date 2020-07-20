@@ -1,14 +1,8 @@
 import React, { Component } from "react";
-import {
-  Map,
-  GoogleApiWrapper,
-  InfoWindow,
-  Marker,
-  Circle,
-  Polyline,
-} from "google-maps-react";
-import Axios from "axios";
+import { Map, GoogleApiWrapper, InfoWindow, Marker, Polyline } from "google-maps-react";
+import axios from "axios";
 import { Input, Typography } from "antd";
+import randomColor from "randomcolor";
 import MapLegend from "./MapLegend";
 import { withRouter, Link } from "react-router-dom";
 import { isAuth } from "../../../../helpers/auth";
@@ -50,11 +44,12 @@ export class JummahMap extends Component {
       });
     }
 
-    Axios.get(
-      `/api/driver/${this.props.location.state.curCity.city
-        .replace(/\s+/g, "-")
-        .toLowerCase()}`
-    )
+    axios
+      .get(
+        `/api/driver/${this.props.location.state.curCity.city
+          .replace(/\s+/g, "-")
+          .toLowerCase()}`
+      )
       .then((response) => {
         this.setState({
           data: response.data.drivers,
@@ -119,23 +114,17 @@ export class JummahMap extends Component {
               onClick={this.onMarkerClick}
               name={`${this.state.address} (Your Current Location)`}
             />
-            <Circle
-              radius={this.milesIntoMeters(JSON.parse(0.5))} // In Meters
-              center={this.state.coordinates}
-              strokeColor='transparent'
-              strokeOpacity={0}
-              strokeWeight={5}
-              fillColor='blue'
-              fillOpacity={0.2}
-            />
 
             {this.polylineCoords().map((locations, index) => (
               <Polyline
                 key={index}
                 path={locations}
-                strokeColor={"black"}
-                strokeOpacity={0.8}
-                strokeWeight={2}
+                strokeColor={randomColor({
+                  luminosity: "dark",
+                  format: "rgb",
+                })}
+                strokeOpacity={1}
+                strokeWeight={3}
               />
             ))}
 
@@ -174,19 +163,6 @@ export class JummahMap extends Component {
                 <h4>{this.state.selectedPlace.name}</h4>
               </div>
             </InfoWindow>
-
-            {this.state.data.map((radius, index) => (
-              <Circle
-                key={index}
-                radius={this.milesIntoMeters(JSON.parse(radius.radius_in_miles))} // In Meters
-                center={radius.current_location[0].coordinates}
-                strokeColor='transparent'
-                strokeOpacity={0}
-                strokeWeight={5}
-                fillColor='#FF0000'
-                fillOpacity={0.2}
-              />
-            ))}
           </Map>
         ) : (
           <div></div>

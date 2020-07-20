@@ -1,4 +1,4 @@
-const Joi = require('@hapi/joi');
+const Joi = require("@hapi/joi");
 
 exports.driverValidation = (driver) => {
   const schema = Joi.object({
@@ -8,7 +8,6 @@ exports.driverValidation = (driver) => {
     current_location: Joi.required(),
     city: Joi.string().lowercase().required(),
     phone_number: Joi.string().required(),
-    radius_in_miles: Joi.string().required(),
     message: Joi.string(),
   });
 
