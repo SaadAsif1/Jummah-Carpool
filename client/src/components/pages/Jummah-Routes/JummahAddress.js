@@ -1,25 +1,34 @@
-import React from 'react';
-import { Input } from 'antd';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { Input, notification } from "antd";
+import { Link } from "react-router-dom";
 import PlacesAutocomplete, {
   geocodeByAddress,
   getLatLng,
-} from 'react-places-autocomplete';
-import { GoogleApiWrapper } from 'google-maps-react';
-import Geocode from 'react-geocode';
-import './Jummah.css';
+} from "react-places-autocomplete";
+import { GoogleApiWrapper } from "google-maps-react";
+import Geocode from "react-geocode";
+import "./Jummah.css";
 
-Geocode.setApiKey('AIzaSyBYHSjax_jdoZXv-eNPEwRx7lFF5FlJ3qU');
+Geocode.setApiKey("AIzaSyBYHSjax_jdoZXv-eNPEwRx7lFF5FlJ3qU");
 
-function JummahAddress() {
-  const [address, setAddress] = React.useState('');
+function JummahAddress({ location }) {
+  const [address, setAddress] = React.useState("");
   const [curCity, setCity] = React.useState({
-    city: '',
+    city: "",
   });
   const [coordinates, setCoordinates] = React.useState({
     lat: null,
     lng: null,
   });
+
+  useEffect(() => {
+    // Check if the redirect from /auth/activate/:token sent use state
+    if (!location.state) {
+      return;
+    } else {
+      notification.warning({ message: location.state.state.message });
+    }
+  }, []);
 
   // When User Actually Selects Address
   const handleSelect = async (value) => {
@@ -43,11 +52,11 @@ function JummahAddress() {
 
   // Get City
   const getCity = (addressArray) => {
-    let city = '';
+    let city = "";
     for (let i = 0; i < addressArray.length; i++) {
       if (
         addressArray[i].types[0] &&
-        'administrative_area_level_2' === addressArray[i].types[0]
+        "administrative_area_level_2" === addressArray[i].types[0]
       ) {
         city = addressArray[i].long_name;
         return city;
@@ -71,9 +80,9 @@ function JummahAddress() {
         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
           <div>
             <Input
-              style={{ width: '100%' }}
+              style={{ width: "100%" }}
               size='large'
-              {...getInputProps({ placeholder: 'Type address' })}
+              {...getInputProps({ placeholder: "Type address" })}
             />
 
             <div>
@@ -82,9 +91,9 @@ function JummahAddress() {
               {suggestions.map((suggestion, index) => {
                 const style = {
                   backgroundColor: suggestion.active
-                    ? 'rgba(193, 174, 236, 0.8)'
-                    : '#fff',
-                  padding: '0.3rem',
+                    ? "rgba(193, 174, 236, 0.8)"
+                    : "#fff",
+                  padding: "0.3rem",
                 };
 
                 return (
@@ -100,14 +109,14 @@ function JummahAddress() {
       <div className=' align-center'>
         <Link
           to={{
-            pathname: '/jummah-map',
+            pathname: "/jummah-map",
             state: { address, coordinates, curCity },
           }}
           disabled={disableCity()}
         >
           <button
             className='jummah-options-btn align-center'
-            style={{ borderRadius: '0', margin: '2rem 0' }}
+            style={{ borderRadius: "0", margin: "2rem 0" }}
             onClick={() => console.log(address, coordinates, curCity)}
             disabled={disableCity()}
           >
@@ -120,5 +129,5 @@ function JummahAddress() {
 }
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyBYHSjax_jdoZXv-eNPEwRx7lFF5FlJ3qU',
+  apiKey: "AIzaSyBYHSjax_jdoZXv-eNPEwRx7lFF5FlJ3qU",
 })(JummahAddress);

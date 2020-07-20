@@ -36,7 +36,9 @@ export class JummahMap extends Component {
   componentDidMount() {
     // Check if the redirect from /auth/activate/:token sent use state
     if (!this.props.location.state) {
-      return this.props.history.push("/jummah-address");
+      return this.props.history.push("/jummah-address", {
+        state: { message: "Please enter your current address!" },
+      });
     } else {
       this.setState({
         coordinates: this.props.location.state.coordinates,
