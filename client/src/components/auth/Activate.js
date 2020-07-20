@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import { Redirect } from 'react-router-dom';
-import { notification } from 'antd';
-import jwt from 'jsonwebtoken';
-import axios from 'axios';
-import HomeNavbar from '../layouts/Home-Navbar/Navbar';
-import './Auth.css';
+import React, { useEffect, useState } from "react";
+import { Redirect } from "react-router-dom";
+import { notification } from "antd";
+import jwt from "jsonwebtoken";
+import axios from "axios";
+import HomeNavbar from "../layouts/Home-Navbar/Navbar";
+import "./Auth.css";
 
 const Activate = ({ match }) => {
   const [values, setValues] = useState({
-    name: '',
-    token: '',
+    name: "",
+    token: "",
     invalidToken: false,
     activation: {
       success: false,
-      message: '',
+      message: "",
     },
   });
 
@@ -34,7 +34,7 @@ const Activate = ({ match }) => {
         });
       })
       .catch((error) => {
-        setValues({ ...values, activation: { success: false, message: '' } });
+        setValues({ ...values, activation: { success: false, message: "" } });
         notification.error({ message: error.response.data.error });
       });
   };
@@ -65,7 +65,7 @@ const Activate = ({ match }) => {
           className='btn'
           onClick={handleActivation}
           disabled={name.length > 2 ? false : true}
-          style={{ padding: '0.8rem 2rem', fontSize: '1rem', marginTop: '1rem' }}
+          style={{ padding: "0.8rem 2rem", fontSize: "1rem", marginTop: "1rem" }}
         >
           Account Activation
         </button>
@@ -79,7 +79,7 @@ const Activate = ({ match }) => {
       {activation.success ? (
         <Redirect
           to={{
-            pathname: '/sign-in',
+            pathname: "/sign-in",
             state: { activation },
           }}
         />
