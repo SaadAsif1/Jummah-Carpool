@@ -15,11 +15,11 @@ const Navbar = ({ history }) => {
   return (
     <div className='home-nav flex-center'>
       <Link to='/' className='home-log'>
-        <BuildOutlined /> Jummah
+        <BuildOutlined /> Jummah Connections
       </Link>
       <div>
-        <Link to='/about' className={navigation('/about')}>
-          About
+        <Link to='/howto' className={navigation('/howto')}>
+          How To
         </Link>
         <Link to='/team' className={navigation('/team')}>
           Meet The Team
