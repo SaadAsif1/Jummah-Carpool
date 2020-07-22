@@ -1,6 +1,6 @@
 import React from "react";
 import HomeNavbar from "../../layouts/Home-Navbar/Navbar";
-import "./About.css";
+import "./HowTo.css";
 
 const About = () => {
   return (
