@@ -151,16 +151,32 @@ const RejisterDriver = ({ history }) => {
   const signUpForm = () => (
     <div>
       <Form layout='vertical' form={form} onFinish={onFinish}>
+        
+        <h2 class="form-subtitle">Personal Information</h2>
+        
         <Form.Item label='Name'>
           <Input style={{ color: "grey" }} value={isAuth().name} disabled />
         </Form.Item>
+        
         <Form.Item label='Email'>
           <Input style={{ color: "grey" }} value={isAuth().email} disabled />
         </Form.Item>
+
         <Form.Item label='Age'>
           <Input style={{ color: "grey" }} value={isAuth().age} disabled />
         </Form.Item>
-        <Form.Item label='Masjid Address'>
+
+        <Form.Item
+          name='phone'
+          label='Phone Number'
+          rules={[{ required: true, message: "Please input your phone number!" }]}
+        >
+          <Input placeholder='Your Number' />
+        </Form.Item>
+        
+        <h2 class="form-subtitle">Venue Information</h2>
+
+        <Form.Item label='Venue Address'>
           <PlacesAutocomplete
             value={masjidAddress}
             onChange={setMasjidAddress}
@@ -236,8 +252,10 @@ const RejisterDriver = ({ history }) => {
             </Form.Item>
           </div>
         </div>
-
-        <Form.Item label='Current Location'>
+        
+        <h2 class="form-subtitle">Pickup Point Information</h2>
+        
+        <Form.Item label='Pickup Point Location'>
           <PlacesAutocomplete
             value={curAddress}
             onChange={setCurAddress}
@@ -245,7 +263,7 @@ const RejisterDriver = ({ history }) => {
           >
             {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
               <div>
-                <Input {...getInputProps({ placeholder: "Type Location" })} />
+                <Input {...getInputProps({ placeholder: "Location address" })} />
 
                 <div style={{ border: "solid 0.5px lightgray" }}>
                   {loading ? <div></div> : null}
@@ -274,7 +292,7 @@ const RejisterDriver = ({ history }) => {
 
         <Form.Item
           name='time_leaving'
-          label='Time Leaving Current Location'
+          label='Time Departing From Pickup Point'
           rules={[{ required: true, message: "Enter Time Leaving Current Location!" }]}
         >
           <TimePicker
@@ -287,20 +305,13 @@ const RejisterDriver = ({ history }) => {
         </Form.Item>
 
         <Form.Item
-          name='phone'
-          label='Phone Number'
-          rules={[{ required: true, message: "Please input your phone number!" }]}
-        >
-          <Input placeholder='Your Number' />
-        </Form.Item>
-
-        <Form.Item
           rules={[{ required: true, message: "This Message is Required!" }]}
           name='message'
-          label='Message'
+          label='Pickup Details'
         >
           <Input.TextArea
-            placeholder='You can enter a meetup point or a detailed description of how far or where to meet up'
+            placeholder='You can enter info about where to find you at the location, 
+            ways of identifiying your vehicle (color, make, model etc.) and other relevant details'
             autoSize={{ minRows: 8, maxRows: 15 }}
           />
         </Form.Item>
@@ -326,7 +337,7 @@ const RejisterDriver = ({ history }) => {
   return (
     <div className='home-container'>
       <div className='driver-form'>
-        <h1 className='align-center'>Register Driver</h1>
+        <h1 className='align-center'>Driver Registration</h1>
 
         {signUpForm()}
       </div>
