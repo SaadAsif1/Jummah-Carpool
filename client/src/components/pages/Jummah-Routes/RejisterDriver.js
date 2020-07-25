@@ -212,7 +212,7 @@ const RejisterDriver = ({ history }) => {
         </Form.Item>
 
         <div>
-          <h3 className='align-center'>Jummah Timings (Friday)</h3>
+          <h3 className='align-center'>Jummah Begins (Friday)</h3>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <Form.Item
               name='jummah-start-time-1'
@@ -293,12 +293,12 @@ const RejisterDriver = ({ history }) => {
         <Form.Item
           name='time_leaving'
           label='Time Departing From Pickup Point'
-          rules={[{ required: true, message: "Enter Time Leaving Current Location!" }]}
+          rules={[{ required: true, message: "Time Leaving Pickup Point" }]}
         >
           <TimePicker
             use12Hours
             format='h:mm a'
-            placeholder='Time Leaving'
+            placeholder='Time Leaving Pickup Point'
             style={{ width: "100%", display: "block" }}
             onChange={(value, time) => setTimeLeaving(time)}
           />
