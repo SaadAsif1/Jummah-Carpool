@@ -54,15 +54,15 @@ class Contact extends Component {
           </div>
           <div className='input-container'>
             <label className='input-label'>Name </label>
-            <input type='text' name='name' placeholder='Name . . .' required />
+            <input type='text' name='name' placeholder='Your Name . . .' required />
           </div>
           <div className='input-container'>
             <label className='input-label'>Email </label>
-            <input type='email' name='email' placeholder='Email . . .' required />
+            <input type='email' name='email' placeholder='Your Email . . .' required />
           </div>
           <div className='input-container'>
             <label className='input-label'>Message </label>
-            <textarea type='text' name='message' placeholder='Message . . .' required />
+            <textarea type='text' name='message' placeholder='Your Message . . .' required />
           </div>
           <button className='btn l-spacing' style={{ width: '100%', padding: '0.6rem' }}>
             {btnText}
