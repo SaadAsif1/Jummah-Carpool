@@ -14,8 +14,8 @@ const Home = () => {
           <div className='home-landing-left animated slideInLeft align-center'>
             <h1 className='home-main-text'>Jummah Carpooling</h1>
             <div className='home-sub-text'>
-              A carpooling website for Muslims. Sign up to offer a ride for others, or 
-              use our interactive map to find a ride for your next jummah.
+              A carpooling website for Muslims. Sign up to offer a ride for others, or use
+              our interactive map to find a ride for your next jummah.
             </div>
             <div className='home-btn-container'>
               <Link to='/jummah-options'>
