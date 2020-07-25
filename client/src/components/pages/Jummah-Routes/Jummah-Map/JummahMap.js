@@ -227,21 +227,21 @@ export class JummahMap extends Component {
                   </div>
                 </div>
                 <div className='jummah-map-sub-box'>
-                  <div className='jummah-map-box-title'>Masjid</div>
+                  <div className='jummah-map-box-title'>Masjid/Venue</div>
                   <div className='jummah-map-box-body'>
                     {driver.masjid_location[0].address}
                   </div>
                 </div>
 
                 <div className='jummah-map-sub-box'>
-                  <div className='jummah-map-box-title'>Jummah Timings (Friday)</div>
+                  <div className='jummah-map-box-title'>Jummah Begins</div>
                   <div className='jummah-map-box-body'>
                     {driver.jumma_timings[0].start} - {driver.jumma_timings[0].end}
                   </div>
                 </div>
 
                 <div className='jummah-map-sub-box'>
-                  <div className='jummah-map-box-title'>Current Location</div>
+                  <div className='jummah-map-box-title'>Pickup Point Location</div>
                   <div className='jummah-map-box-body'>
                     {driver.current_location[0].address}
                   </div>
@@ -249,13 +249,13 @@ export class JummahMap extends Component {
 
                 <div className='jummah-map-sub-box'>
                   <div className='jummah-map-box-title'>
-                    Time Leaving Current Location
+                    Time Leaving Pickup Point
                   </div>
                   <div className='jummah-map-box-body'>{driver.time_leaving}</div>
                 </div>
 
                 <div className='jummah-map-sub-box'>
-                  <div className='jummah-map-box-title'>Driver Message</div>
+                  <div className='jummah-map-box-title'>Pickup Details</div>
                   <div className='jummah-map-box-body'>
                     {driver.message}
                   </div>

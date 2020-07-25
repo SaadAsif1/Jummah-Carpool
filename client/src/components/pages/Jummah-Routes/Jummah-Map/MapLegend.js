@@ -38,27 +38,27 @@ const MapLegend = () => {
           <div className='map-legend-box'>
             <img src={Person} className='map-legend-img' alt='Person' />
             <div className='map-legend-dec'>
-              This pin makes the your current address that you typed in before this page
+              This pin represents the city or area you submitted when you opened this map
             </div>
           </div>
           <div className='map-legend-box'>
             <img src={Car} className='map-legend-img' alt='Car' />
             <div className='map-legend-dec'>
-              This pin represents an avaliabe driver an there current location
+              This pin represents the pickup point of an available driver
             </div>
           </div>
           <div className='map-legend-box'>
             <img src={Masjid} className='map-legend-img' alt='Masjid' />
             <div className='map-legend-dec'>
-              This pin represents a the location of a Mosque
+              This pin represents the location of a Masjid or venue
             </div>
           </div>
 
           <div className='map-legend-box'>
             <div className='map-legend-line '></div>
             <div className='map-legend-dec'>
-              This is a line which connect the driver current location to the masjid of
-              choice for Jummah.
+              This is a line which connects the driver's current location to the masjid/venue of
+              choice for Jummah
             </div>
           </div>
         </div>

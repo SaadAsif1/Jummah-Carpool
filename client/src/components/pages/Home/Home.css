@@ -79,3 +79,86 @@
     background-color: #22313f;
   }
 }
+
+/*---------------*/
+
+
+.team-container {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(176deg,  #e7e7e7 50%, #3c683a calc(50% + 2px));
+  padding-top: 6rem;
+}
+
+.card-container {
+  width: 80%;
+  margin: auto;
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-between;  
+}
+/* Title */
+.team-title-container {
+  text-align: center;
+}
+
+.team-title {
+  color: rgb(97, 97, 97);
+  font-size: 2rem;
+  font-family: 'Poppins', sans-serif;
+  display: inline;
+  border-bottom: solid 3px #03a87c;
+}
+
+/* Team Cards */
+.team-card {
+  width: 20%;
+  background-color: #5c8853;
+  margin-left: auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-radius: 10px;
+  justify-content: space-between;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.team-img {
+  margin: auto;
+  border-radius: 50%;
+  border: solid 5px #03a87c;
+  height: 9rem;
+  display: block;
+}
+
+/* Team Decription */
+.team-dec-container {
+  margin: 1rem;
+  color: rgb(235, 235, 235);
+}
+
+.team-role {
+  /* font-family: 'Poppins', sans-serif; */
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+.team-name {
+  margin: 0.2rem 0;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+}
+
+.team-links {
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+  overflow-wrap: break-word;
+  color: #8ddbca;
+}
+
+.team-dec {
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+  line-height: 1.4rem;
+  margin-top: 1rem;
+}
+

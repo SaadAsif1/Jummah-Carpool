@@ -5,7 +5,6 @@ import { Switch, BrowserRouter, Route } from 'react-router-dom';
 import Home from './components/pages/Home/Home';
 import HowTo from './components/pages/HowTo/HowTo';
 import Contact from './components/pages/Contact/Contact';
-import Team from './components/pages/Team/Team';
 import TermsConditions from './components/pages/Terms-Conditions/TermsConditions';
 import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
@@ -29,7 +28,6 @@ const Routes = () => {
         <Route exact path='/' component={Home} />
         <Route exact path='/howto' component={HowTo} />
         <Route exact path='/contact' component={Contact} />
-        <Route exact path='/team' component={Team} />
         <Route exact path='/terms-conditions' component={TermsConditions} />
         <Route exact path='/sign-in' component={SignIn} />
         <Route exact path='/sign-up' component={SignUp} />
