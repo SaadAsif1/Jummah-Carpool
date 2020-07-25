@@ -21,9 +21,6 @@ const Navbar = ({ history }) => {
         <Link to='/howto' className={navigation('/howto')}>
           How To
         </Link>
-        <Link to='/team' className={navigation('/team')}>
-          Meet The Team
-        </Link>
         <Link to='/contact' className={navigation('/contact')}>
           Contact
         </Link>
