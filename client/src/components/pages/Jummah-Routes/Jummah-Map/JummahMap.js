@@ -257,9 +257,7 @@ export class JummahMap extends Component {
                 <div className='jummah-map-sub-box'>
                   <div className='jummah-map-box-title'>Driver Message</div>
                   <div className='jummah-map-box-body'>
-                    <Paragraph ellipsis={{ rows: 2, expandable: true, symbol: "more" }}>
-                      {driver.message}
-                    </Paragraph>
+                    {driver.message}
                   </div>
                 </div>
 

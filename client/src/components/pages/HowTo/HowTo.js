@@ -6,33 +6,19 @@ const About = () => {
   return (
     <div className="home-container">
       <HomeNavbar />
-
       <div className="about-container">
-        <div className="about-section">
-          <h2>About Sakeenat Ibad-ur-Rehman</h2>
-          <p>
-            Sakeenat Ibad-ur-Rehman has been serving thirteen years its local
-            community through in-person classes, and is outreaching muslims in
-            United States and globaly through its conference phone sessions.
-          </p>
-        </div>
-
-        <div className="about-section">
-          <h2>About Sakeenat Ibad-ur-Rehman</h2>
-          <p>
-            Sakeenat Ibad-ur-Rehman has been serving thirteen years its local
-            community through in-person classes, and is outreaching muslims in
-            United States and globaly through its conference phone sessions.
-          </p>
-        </div>
-
-        <div className="about-section">
-          <h2>About Sakeenat Ibad-ur-Rehman</h2>
-          <p>
-            Sakeenat Ibad-ur-Rehman has been serving thirteen years its local
-            community through in-person classes, and is outreaching muslims in
-            United States and globaly through its conference phone sessions.
-          </p>
+        <p>How to use Jummah Carpooling</p>
+        <div className="video-container">
+          <div>
+            <iframe
+              width="850"
+              height="543"
+              src="https://www.youtube.com/embed/za2I-fRi5D8"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
       </div>
     </div>
