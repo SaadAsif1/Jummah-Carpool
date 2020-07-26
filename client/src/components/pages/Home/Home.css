@@ -81,8 +81,8 @@
 /*---------------*/
 
 .mission-container {
-  height: 100vh;
   background: #e7e7e7;
+  padding-bottom: 3rem;
 }
 
 .mission-title-container {
@@ -123,6 +123,7 @@
 /* Title */
 .team-title-container {
   text-align: center;
+  padding-bottom: 1rem;
 }
 
 .team-title {
@@ -177,7 +178,7 @@
   font-family: 'Poppins', sans-serif;
   letter-spacing: 1px;
   overflow-wrap: break-word;
-  color: #8ddbca;
+  color: #f3f3f3;
   font-size: 40px;
 }
 
