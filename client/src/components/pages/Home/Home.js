@@ -8,6 +8,7 @@ import Abdullah from '../../../assets/Abdalla.jpg';
 import Mubariz from '../../../assets/Mubariz.jpg';
 
 import "./Home.css";
+import "./fonts/font-awesome.min.css"
 
 const Front = () => {
   return (
@@ -57,14 +58,24 @@ const OurTeam = () => {
         <div className='team-dec-container'>
           <div className='team-role'>Full Stack Developer</div>
           <div className='team-name'>Saad Asif</div>
-          <a
-            target='_blank'
-            rel='noopener noreferrer'
-            href='https://www.linkedin.com/in/saad-asif-7268851a8/'
-            className='team-links'
-          >
-            linkedin.com/in/saad-asif
-          </a>
+          <div className='link-container'>
+            <a
+              target='_blank'
+              rel='noopener noreferrer'
+              href='https://www.linkedin.com/in/saad-asif-7268851a8/'
+              className='team-links'
+            >
+              <i class="fa fa-linkedin"></i>
+            </a>
+            <a
+              target='_blank'
+              rel='noopener noreferrer'
+              href='https://github.com/SaadAsif1'
+              className='team-links'
+            >
+              <i class="fa fa-github"></i>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -73,14 +84,24 @@ const OurTeam = () => {
         <div className='team-dec-container'>
           <div className='team-role'>Front End Developer</div>
           <div className='team-name'>Mubariz Afzal</div>
-          <a
-            target='_blank'
-            rel='noopener noreferrer'
-            href='https://www.linkedin.com/in/mubarizafzal/'
-            className='team-links'
-          >
-            linkedin.com/in/mubarizafzal
-          </a>
+          <div className='link-container'>
+            <a
+              target='_blank'
+              rel='noopener noreferrer'
+              href='https://www.linkedin.com/in/mubarizafzal/'
+              className='team-links'
+            >
+              <i class="fa fa-linkedin"></i>
+            </a>
+            <a
+              target='_blank'
+              rel='noopener noreferrer'
+              href='https://github.com/mubarizafzal'
+              className='team-links'
+            >
+              <i class="fa fa-github"></i>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -89,14 +110,24 @@ const OurTeam = () => {
         <div className='team-dec-container'>
           <div className='team-role'>Front End Developer</div>
           <div className='team-name'>Umer Pittal</div>
-          <a
-            target='_blank'
-            rel='noopener noreferrer'
-            href='https://www.linkedin.com/in/umer-pittal-a523a9149/'
-            className='team-links'
-          >
-            linkedin.com/in/umer-pittal
-          </a>
+          <div className='link-container'>
+            <a
+              target='_blank'
+              rel='noopener noreferrer'
+              href='https://github.com/umerp'
+              className='team-links'
+            >
+              <i class="fa fa-linkedin"></i>
+            </a>
+            <a
+              target='_blank'
+              rel='noopener noreferrer'
+              href='https://www.linkedin.com/in/saad-asif-7268851a8/'
+              className='team-links'
+            >
+              <i class="fa fa-github"></i>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -105,14 +136,24 @@ const OurTeam = () => {
         <div className='team-dec-container'>
           <div className='team-role'>Front End Developer</div>
           <div className='team-name'>Abdalla Atalla</div>
-          <a
-            target='_blank'
-            rel='noopener noreferrer'
-            href='http://linkedin.com/in/abdalla-atalla-300616173'
-            className='team-links'
-          >
-            linkedin.com/in/abdalla-atalla
-          </a>
+          <div className='link-container'>
+            <a
+              target='_blank'
+              rel='noopener noreferrer'
+              href='http://linkedin.com/in/abdalla-atalla-300616173'
+              className='team-links'
+            >
+              <i class="fa fa-linkedin"></i>
+            </a>
+            <a
+              target='_blank'
+              rel='noopener noreferrer'
+              href='https://github.com/abdalla-atalla'
+              className='team-links'
+            >
+              <i class="fa fa-github"></i>
+            </a>
+          </div>
         </div>
       </div>
       </div>
