@@ -114,7 +114,7 @@ const OurTeam = () => {
             <a
               target='_blank'
               rel='noopener noreferrer'
-              href='https://github.com/umerp'
+              href='https://www.linkedin.com/in/umer-pittal-a523a9149/'
               className='team-links'
             >
               <i class="fa fa-linkedin"></i>
@@ -122,7 +122,7 @@ const OurTeam = () => {
             <a
               target='_blank'
               rel='noopener noreferrer'
-              href='https://www.linkedin.com/in/saad-asif-7268851a8/'
+              href='https://github.com/umerp'
               className='team-links'
             >
               <i class="fa fa-github"></i>
