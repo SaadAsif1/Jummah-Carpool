@@ -163,9 +163,32 @@ const OurTeam = () => {
 
 const OurMission = () => {
   return (
-    <h1>
-      todo
-    </h1>
+    <div className="mission-container">
+      <div className="h" >
+      </div>
+      <div className='mission-title-container'>
+        <h2 className='team-title'>Our Mission</h2>
+      </div>
+      <div className="bismillah"> بسم الله الرحمن الرحيم</div>
+      <div className="mission-para">
+        Seeing the issues faced by Muslims on their commute to Jummah, we 
+        came together to help the people find and share rides to their local Jummah. 
+      </div>
+      <div className="mission-para">
+        Often we find ourselvse in close proximity with other Jummah-goers, but we're unable pool a ride together.
+        Some of us cannot find a ride, and the parking issues that take place at our Masjids are well-known.
+      </div>
+      <div className="mission-para">
+        Jummah Connections is aimed to provide a platform for drivers to earn the reward of helping their
+         fellow Muslims fulfill their Jummah obligation, and for riders to discover trips in their locality
+         in an online, simple and intuitive way, all while reducing CO2 emissions.
+      </div>
+      <div className="mission-para">
+      Our inspiration came from our religion which teaches us to take care of the plant and the importance of going to Jummah. 
+      As stated in this Hadith, "The world is beautiful and verdant, and verily God, be He exalted, has made you His stewards
+       in it, and He sees how you acquit yourselves.” (Muslim)
+      </div>
+    </div>
   );
 };
 
@@ -173,6 +196,7 @@ const Home = () => {
   return (
       <div>
         <Front />
+        <OurMission />
         <OurTeam />
       </div>
   );
