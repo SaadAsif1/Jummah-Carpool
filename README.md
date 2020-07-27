@@ -36,7 +36,7 @@ Our Miro wireframes:
 - We used "@hapi/joi" to validate in coming request on the server. We also used "antd" for validation of input data for the front end
 
 Diagram explaining our authentication and authorization process:
-<img src="http://www.dnnsoftware.com/docs/common/img/gra-jwtprocess.png" alt="JWT"  width="1000" height="450" >
+<img src="http://www.dnnsoftware.com/docs/common/img/gra-jwtprocess.png" alt="JWT"  width="1000" height="500" style="border: solid 1px black" >
 
 - We Implemented Google Maps to show drivers current and end locations. We also used Google Places API so users could easily pick address with an auto complete address bar
 - We coordinated with our team mates on Zoom, scheduled sessions almost daily, and used GItHub for collaboration and source control
