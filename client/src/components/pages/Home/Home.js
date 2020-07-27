@@ -196,7 +196,7 @@ const OurMission = () => {
         help the people find and share rides to their local Jummah.
       </div>
       <div className='mission-para'>
-        Often we find ourselvse in close proximity with other Jummah-goers, but we're
+        Often we find ourselves in close proximity with other Jummah-goers, but we're
         unable to pool a ride together. Some of us cannot find a ride, and the parking
         issues that take place at our Masjids are well-known.
       </div>
@@ -208,7 +208,7 @@ const OurMission = () => {
       </div>
       <div className='mission-para'>
         Our inspiration came from our religion which teaches us the importance of Jummah
-        and to take care of our plnaet. As stated in this Hadith: "The world is beautiful
+        and to take care of our planet. As stated in this Hadith: "The world is beautiful
         and verdant, and verily God, be He exalted, has made you His stewards in it, and
         He sees how you acquit yourselves.” (Muslim)
       </div>
