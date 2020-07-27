@@ -1,7 +1,5 @@
 <h1 align="center">Jummah Connections</h1>
 
-<img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/001/167/464/datas/original.png" alt="Miro" width="1000" height="500">
-
 ## Introduction
 
 As four Muslim brothers came together at the start of this project we discussed various problems we faced as Muslims living in the West. After much brainstorming, we realized that there was a common problem we all faced; getting a ride to Jummah. Many students and professionals in our community share this issue especially. We wanted to come up with a solution using our skills as Muslim programmers. We believe our web app can address: the well-known parking issues at Masjids, traffic congestion, unnecessary trips from the same area, folks not having a ride to Jummah, and minimizing harm to the planet from vehicle emissions.
@@ -11,6 +9,8 @@ Our inspiration came from our religion teaching us to take care of our planet an
 ## What is Jummah Connections
 
 Our [web app](https://jummah-carpool.herokuapp.com/) provides a platform for users to carpool with other users to their local Jummah. There are riders using our intuitive map feature to find rides in their locality, and there are drivers seeking to help their fellow Muslims find a ride to Jummah and fulfil their obligations.
+
+<img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/001/167/464/datas/original.png" alt="Miro" width="1000" height="450">
 
 ## How we built it
 
