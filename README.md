@@ -1,3 +1,5 @@
+<h1 align="center">Jummah Connections</h1>
+
 <img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/001/167/464/datas/original.png" alt="Miro" width="1000" height="500">
 
 ## Introduction
