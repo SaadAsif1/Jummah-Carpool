@@ -1,6 +1,8 @@
 <h1 align="center">Jummah Connections</h1>
 <br/>
-<a href="https://jummah-carpool.herokuapp.com/" target="_blank"><img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/001/167/464/datas/original.png" alt="Miro" width="1000" height="450"></a>
+
+[<img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/001/167/464/datas/original.png" alt="Miro" width="1000" height="450">](https://jummah-carpool.herokuapp.com/){:target="_blank"}
+
 
 ## Introduction
 
