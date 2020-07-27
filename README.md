@@ -1,4 +1,4 @@
-<img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/001/167/464/datas/original.png" alt="Miro" width="1000" height="400">
+<img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/001/167/464/datas/original.png" alt="Miro" width="1000" height="600">
 
 ## Introduction
 
@@ -28,7 +28,7 @@ For our app design we implemented an MVC architecture. We chose to host our web 
   - Details on npm, NodeJS, and the use of development servers
 
 Our Miro wireframes:
-<img src="https://i.imgur.com/tQoLnan.png" alt="Miro" width="500" height="400">
+<img src="https://i.imgur.com/tQoLnan.png" alt="Miro" width="1000" height="600">
 
 ## Accomplishments
 
@@ -36,7 +36,7 @@ Our Miro wireframes:
 - We used "@hapi/joi" to validate in coming request on the server. We also used "antd" for validation of input data for the front end
 
 Diagram explaining our authentication and authorization process:
-<img src="http://www.dnnsoftware.com/docs/common/img/gra-jwtprocess.png" alt="JWT" width="500" height="400">
+<img src="http://www.dnnsoftware.com/docs/common/img/gra-jwtprocess.png" alt="JWT"  width="1000" height="600" >
 
 - We Implemented Google Maps to show drivers current and end locations. We also used Google Places API so users could easily pick address with an auto complete address bar
 - We coordinated with our team mates on Zoom, scheduled sessions almost daily, and used GItHub for collaboration and source control
