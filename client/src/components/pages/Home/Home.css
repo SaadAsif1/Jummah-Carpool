@@ -109,7 +109,7 @@
 }
 
 .team-container {
-  background-image: linear-gradient(176deg,  #e7e7e7 50%, #3c683a calc(50% + 2px));
+  background-image: linear-gradient(176deg, #e7e7e7 50%, #22313f calc(50% + 2px));
   padding-bottom: 10rem;
 }
 
@@ -118,7 +118,7 @@
   margin: auto;
   margin-top: 4rem;
   display: flex;
-  justify-content: space-between;  
+  justify-content: space-between;
 }
 /* Title */
 .team-title-container {
@@ -129,7 +129,7 @@
 .team-title {
   color: rgb(97, 97, 97);
   font-size: 2rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   display: inline;
   border-bottom: solid 3px #03a87c;
 }
@@ -137,7 +137,7 @@
 /* Team Cards */
 .team-card {
   width: 20%;
-  background-color: #5c8853;
+  background-color: #03a87c;
   margin-left: auto;
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -149,7 +149,7 @@
 .team-img {
   margin: auto;
   border-radius: 50%;
-  border: solid 5px #03a87c;
+  border: solid 5px #22313f;
   height: 9rem;
   display: block;
 }
@@ -160,40 +160,68 @@
   color: rgb(235, 235, 235);
 }
 
-.team-role {
-  /* font-family: 'Poppins', sans-serif; */
-  font-size: 1.1rem;
-  letter-spacing: 1px;
-}
-
 .team-name {
-  margin: 0.2rem 0;
-  font-family: 'Poppins', sans-serif;
-  letter-spacing: 1px;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: white;
+  background-color: #22313f;
+  padding: 0.5rem 0;
+  text-align: center;
+  margin-top: 1rem;
 }
 
-.team-links {
-  font-family: 'Poppins', sans-serif;
+.team-role {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-weight: 700;
+  color: color;
+  background-color: #22313f;
+  padding: 0.3rem;
+  border-radius: 20px;
+}
+
+.team-links-linkedin {
+  display: block;
+  background-color: #0e76a8;
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem;
+  margin-bottom: 0.6rem;
   letter-spacing: 1px;
-  overflow-wrap: break-word;
-  color: #f3f3f3;
-  font-size: 40px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.team-links-linkedin span {
+  font-size: 1.2rem;
+}
+
+.team-links-github {
+  display: block;
+  background-color: #6cc644;
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem;
+  margin-bottom: 0.6rem;
+  letter-spacing: 1px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.team-links-github span {
+  font-size: 1.2rem;
+}
+
+.team-links-linkedin:hover,
+.team-links-github:hover {
+  color: white;
 }
 
 .link-container {
-  width: 50%;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
+  margin-top: 1rem;
+  margin-bottom: -1rem;
 }
 
-
 .team-dec {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   letter-spacing: 1px;
   line-height: 1.4rem;
   margin-top: 1rem;
 }
-

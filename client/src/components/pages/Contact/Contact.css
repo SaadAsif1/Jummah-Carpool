@@ -6,7 +6,7 @@
   padding: 1.5rem;
   border-radius: 5px;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .input-label {
@@ -42,7 +42,7 @@
 .contact-title {
   color: white;
   font-size: 2rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   display: inline;
   border-bottom: solid 3px #03a87c;
 }
