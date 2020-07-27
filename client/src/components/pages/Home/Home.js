@@ -71,7 +71,7 @@ const OurTeam = () => {
               <a
                 target='_blank'
                 rel='noopener noreferrer'
-                href='https://github.com/umerp'
+                href='https://github.com/SaadAsif1'
                 className='team-links-github'
               >
                 <span>
@@ -103,7 +103,7 @@ const OurTeam = () => {
               <a
                 target='_blank'
                 rel='noopener noreferrer'
-                href='https://github.com/umerp'
+                href='https://github.com/mubarizafzal'
                 className='team-links-github'
               >
                 <span>
