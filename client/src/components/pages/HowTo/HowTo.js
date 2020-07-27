@@ -10,14 +10,9 @@ const About = () => {
         <p>How to use Jummah Carpooling</p>
         <div className="video-container">
           <div>
-            <iframe
-              width="850"
-              height="543"
-              src="https://www.youtube.com/embed/za2I-fRi5D8"
-              frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+       
+    <iframe width="850"
+              height="543" src="https://www.youtube.com/embed/Kl5H_blMoNU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </div>
       </div>
