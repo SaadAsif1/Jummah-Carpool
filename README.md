@@ -1,4 +1,6 @@
 <h1 align="center">Jummah Connections</h1>
+<br/>
+<img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/001/167/464/datas/original.png" alt="Miro" width="1000" height="450">
 
 ## Introduction
 
@@ -9,8 +11,6 @@ Our inspiration came from our religion teaching us to take care of our planet an
 ## What is Jummah Connections
 
 Our [web app](https://jummah-carpool.herokuapp.com/) provides a platform for users to carpool with other users to their local Jummah. There are riders using our intuitive map feature to find rides in their locality, and there are drivers seeking to help their fellow Muslims find a ride to Jummah and fulfil their obligations.
-
-<img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/001/167/464/datas/original.png" alt="Miro" width="1000" height="450">
 
 ## How we built it
 
