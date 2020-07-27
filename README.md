@@ -1,3 +1,5 @@
+<img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/001/167/464/datas/original.png" alt="Miro" width="500" height="400">
+
 ## Introduction
 
 As four Muslim brothers came together at the start of this project we discussed various problems we faced as Muslims living in the West. After much brainstorming, we realized that there was a common problem we all faced; getting a ride to Jummah. Many students and professionals in our community share this issue especially. We wanted to come up with a solution using our skills as Muslim programmers. We believe our web app can address: the well-known parking issues at Masjids, traffic congestion, unnecessary trips from the same area, folks not having a ride to Jummah, and minimizing harm to the planet from vehicle emissions.
