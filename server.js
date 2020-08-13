@@ -5,7 +5,7 @@ const dbConnect = require("./config/dbConnect");
 const sslRedirect = require("heroku-ssl-redirect");
 const app = express();
 
-// enable ssl redirect
+// enable ssl redirects
 app.use(sslRedirect());
 
 // Imports Routes
